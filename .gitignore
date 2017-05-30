@@ -1,1 +1,12 @@
 node_modules/*
+ApplicationInsights.config
+Bivaba.csproj
+Bivaba.csproj.user
+Properties/*
+Web.Debug.config
+Web.Release.config
+Web.config
+bin/*
+obj/* 
+packages.config
+package.json.txt
