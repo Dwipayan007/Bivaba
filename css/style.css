@@ -32,7 +32,7 @@ body a:hover{
 	text-decoration:none;
 }
 /*-- banner--*/
-.banner {
+/*.banner {
 	background:url(../images/a.jpg)no-repeat center;
 	-webkit-background-size:cover;
 	background-size:cover;
@@ -40,7 +40,7 @@ body a:hover{
 }
 .banner-info {
 	background:url(../images/overlay.png)repeat;  
-}
+}*/
 /*-- banner-top --*/
 .banner-top {
     padding: 2.5em 0 0;
@@ -161,315 +161,10 @@ ul.social-icons, .banner-top-right p {
     padding: 0.3em 0 0.5em;
 }
 /*-- //banner-text --*/
-/*-- top-nav --*/
-.main {
-    height: 175px;
-}
-.banner .nav ul { 
-	margin: 0;
-	padding: 0; 
-}
-.banner .nav li span {
-	display: block;
-}
-.banner .nav a {
-	font-size: 1.2em;
-	display: block;
-	color: rgba(249, 249, 249, .9);
-	text-decoration: none;
-	-webkit-transition: color .5s, background .5s, height .5s;
-	-moz-transition: color .5s, background .5s, height .5s;
-	-o-transition: color .5s, background .5s, height .5s;
-	-ms-transition: color .5s, background .5s, height .5s;
-	transition: color .5s, background .5s, height .5s; 
-	font-weight:100;
-}
-.banner .nav i{
-	/* Make the font smoother for Chrome */
-	-webkit-transform: translate3d(0, 0, 0);
-	-moz-transform: translate3d(0, 0, 0);
-	-o-transform: translate3d(0, 0, 0);
-	-ms-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0);
-}
-/* Remove the blue Web-kit background when element is tapped */ 
-.no-touch .banner .nav ul:hover a {
-	color: rgba(249, 249, 249, .5);
-}
-.no-touch .banner .nav ul:hover a:hover {
-	color: rgba(249, 249, 249, 0.99);
-}
-/* Adding some background color to the different menu items */
 
-.banner .nav li:nth-child(6n+1) {
-	border:none;
-}
-.banner .nav li { 
-		background: #1ABC9C; 
-}
-/* Transforms the list into a horizontal navigation */
-	.banner .nav li {
-		float: left;
-		width: 13.666667%;
-		text-align: center;
-		-webkit-transition: border .5s;
-		-moz-transition: border .5s;
-		-o-transition: border .5s;
-		-ms-transition: border .5s;
-		transition: border .5s; 
-		background: #1ABC9C;
-		border-left: 1px solid rgb(78, 78, 78);
-		display: block;
-	}
-
-	.banner .nav a {
-		display: block;
-		width: auto;
-	}
-	/* Placing the icon */
-	
-	.icon {
-		padding-top: 1em;
-	}
-
-	.icon + span {
-		margin-top: 1em;
-		-webkit-transition: margin .5s;
-		-moz-transition: margin .5s;
-		-o-transition: margin .5s;
-		-ms-transition: margin .5s;
-		transition: margin .5s;
-	}
-
-	/* Animating the height of the element*/
-	.banner .nav a {
-		height: 6.5em;
-	}
-	/* Positioning the icons and preparing for the animation*/
-.banner .nav i {
-    position: relative;
-    display: inline-block;
-    margin: 0 auto;
-    padding: 0.4em;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%; 
-    border-radius: 50%; 
-    font-size: .9em;
-	-webkit-box-shadow: 0 0 0 30px transparent;
-	-moz-box-shadow: 0 0 0 30px transparent; 
-    box-shadow: 0 0 0 30px transparent;
-    background: rgba(255, 255, 255, 0.18);
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    -o-transform: translate3d(0, 0, 0);
-    -ms-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    -webkit-transition: box-shadow .6s ease-in-out;
-    -moz-transition: box-shadow .6s ease-in-out;
-    -o-transition: box-shadow .6s ease-in-out;
-    -ms-transition: box-shadow .6s ease-in-out;
-    transition: box-shadow .6s ease-in-out;
-}
-/* Making the text follow the height animation */
-	.no-touch .banner .nav a:hover .icon + span {
-		margin-top: 1.8em;
-		-webkit-transition: margin .5s;
-		-moz-transition: margin .5s;
-		-o-transition: margin .5s;
-		-ms-transition: margin .5s;
-		transition: margin .5s;
-	}
-	/* Animate the box-shadow to create the effect */
-	.no-touch .banner .nav a:hover i,
-	.no-touch .banner .nav a:active i,
-	.no-touch .banner .nav a:focus i {		
-		-webkit-box-shadow: 0 0 0 0 rgba(255,255,255,0.2);
-		-moz-box-shadow: 0 0 0 0 rgba(255,255,255,0.2); 
-		box-shadow: 0 0 0 0 rgba(255,255,255,0.2);
-		-webkit-transition: box-shadow .4s ease-in-out;
-		-moz-transition: box-shadow .4s ease-in-out;
-		-o-transition: box-shadow .4s ease-in-out;
-		-ms-transition: box-shadow .4s ease-in-out;
-		transition: box-shadow .4s ease-in-out;
-	}
-		
-/* For screen bigger than 800px */
-@media (min-width: 50em) {
-
-	/* hover, focused and active effects that add a little colored border to the different items */
-	.no-touch .banner .nav li a:hover,
-	.no-touch .banner .nav li a:active,
-	.no-touch .banner .nav li a:focus {
-		border-bottom: 4px solid #FC6914;
-	}
-	
-	.no-touch .banner .nav a:hover ,
-	.banner .nav a:active ,
-	.banner .nav a:focus {
-		height: 6.5em;
-	}	
-	
-}
-
-@media (min-width: 50em) and (max-width: 61.250em) {
-
-	/* Size and font adjustments to make it fit into the screen*/
-	.banner .nav ul {
-		font-size: 1.2em;
-	}
-}
-
-/* The "tablet" and "mobile" version */
-
-@media (max-width: 49.938em) {		
-	 
-	.banner .nav ul li {
-		-webkit-transition: background 0.5s;
-		-moz-transition: background 0.5s;
-		-o-transition: background 0.5s;
-		-ms-transition: background 0.5s;
-		transition: background 0.5s;
-	}	
-
-}
-
-/* CSS specific to the 2x3 columns version */
-@media (min-width:32.5em) and (max-width: 49.938em) {
-	
-	/* Creating the 2 column layout using floating elements once again */
-	.banner .nav li {
-		display: block;
-		float: left;
-		width: 32.15%;
-		margin: 0 .3em .5em;
-	} 
-	/* Adding some padding to make the elements look nicer*/
-	.banner .nav a {
-		padding: 0.8em;		
-	}
-
-	/* Displaying the icons on the left, and the text on the right side using inlin-block*/
-	.banner .nav li span, 
-	.banner .nav li span.icon {
-		display: inline-block;
-	}
-
-	.banner .nav li span.icon {
-		width: 45%;
-		text-align: left;
-	}
- 
-	.icon + span {
-		position: relative;
-		top: -0.2em;
-	}
-
-	/* Adaptating to the icons to animate the size and border of the rounded background in a more discreet way */
-	.banner .nav li i {
-		display: inline-block;
-		padding: 8% 9%;
-		border: 4px solid transparent;
-		-webkit-border-radius: 50%;
-		-moz-border-radius: 50%; 
-		border-radius: 50%;
-		font-size: 1.5em;
-		background: rgba(255,255,255,0.1);
-		 
-	}
-
-	/* Transition effect on the border color */
-	.no-touch .banner .nav li:hover i,
-	.no-touch .banner .nav li:active i,
-	.no-touch .banner .nav li:focus i {
-		border: 4px solid rgba(255,255,255,0.1);
-	}
-	
-}
-
-/* Adapting the font size and width for smaller screns*/
-@media (min-width: 32.5em) and (max-width: 38.688em) {
-	
-	.banner .nav li span.icon {
-		width: 50%;
-	}
-
-	.banner .nav li .icon + span {
-		font-size: 0.9em;
-	}
-}
-
-/* Styling the toggle menu link and hiding it */
-.banner .nav .navtoogle {
-    display: none;
-    padding: 0.5em 0.5em 0.6em;
-    font-weight: normal;
-    color: rgb(255, 255, 255);
-    font-size: 1.2em;
-    background: none;
-    border: none;
-    border-bottom: 2px solid rgb(221, 221, 221);
-    cursor: pointer;
-    outline: none;
-    margin: 0 auto;
-}
-.icon-menu {
-	position: relative;
-	top: 3px;
-	line-height: 0;
-	font-size: 1.6em;
-}
-
-@media (max-width: 32.438em) {
-
-	/* Unhiding the styled menu link */
-	.nav .navtoogle{
-		margin: 0;
-		display: block !important;
-	} 
-	/* Animating the height of the navigation when the button is clicked */
-	
-	/* When JavaScript is disabled, we hide the menu */
-	.no-js .nav ul {
-		max-height: 30em;
-		overflow: hidden;
-	}
-	
-	/* When JavaScript is enabled, we hide the menu */
-	 
-	
-	/* Displaying the menu when the user has clicked on the button*/
-	.js .nav .active + ul {		
-		max-height: 30em;
-		overflow: hidden;
-		-webkit-transition: max-height .4s;
-		-moz-transition: max-height .4s;
-		-o-transition: max-height .4s;
-		-ms-transition: max-height .4s;
-		transition: max-height .4s;
-	}
-
-	/* Adapting the layout of the menu for smaller screens : icon on the left and text on the right*/
-	
-	.banner .nav li span {
-		display: inline-block;
-		height: 100%;
-	}
-
-	.banner .nav a {
-		padding: 0.5em;		
-	}
-	
-	.icon + span {
-		margin-left: 1em;
-		font-size: 0.8em;
-	}
-	
-	  
-}
-/*-- //top-nav --*/
 /*-- welcome --*/
 .welcome,.latest,.about,.team,.services,.w3services-bottom,.features,.gallery,.codes,.contact,.single-page{
-	padding:6em 0;
+	padding:0em 0;
 }
 .title {
     margin-bottom: 5em;
@@ -1793,7 +1488,7 @@ h2.typoh2{
     width: 29.3%;
 }
 .welcome, .latest, .about, .team, .services, .w3services-bottom, .features, .gallery, .codes, .contact, .single-page {
-    padding: 5em 0;
+    padding: 0em 0;
 }
 .title {
     margin-bottom: 4em;
@@ -3056,10 +2751,6 @@ a.more {
 }
 /*-- //responsive-design ---*/
 
-
-
-
-
- 
-
- 
+ #myCarousel{
+     height: 480px;
+ }
