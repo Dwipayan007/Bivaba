@@ -200,7 +200,7 @@ img.img-responsive {
     transition: .5s all;
 }
 .welcome-right {
-    padding: 3.26em 3em;
+    padding: 3.26em 3em !important;
     -webkit-box-shadow: 0 0 1px 1px #CECECE;
     -moz-box-shadow: 0 0 1px 1px #CECECE;
     box-shadow: 0 0 1px 1px #CECECE; 
@@ -1488,13 +1488,14 @@ h2.typoh2{
     width: 29.3%;
 }
 .welcome, .latest, .about, .team, .services, .w3services-bottom, .features, .gallery, .codes, .contact, .single-page {
-    padding: 0em 0;
+    padding: 1em 0;
 }
 .title {
-    margin-bottom: 4em;
+    margin-bottom: 0em;
+    margin-top:2em;
 }
 .welcome-right {
-    padding: 3.26em 3em; 
+    padding: 0em 3em; 
 }
 .footer {
     padding: 3em 0; 
@@ -2752,5 +2753,6 @@ a.more {
 /*-- //responsive-design ---*/
 
  #myCarousel{
-     height: 480px;
+     height: 450px;
+     margin-bottom:-4em;
  }

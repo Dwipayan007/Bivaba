@@ -10,21 +10,22 @@
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!-- //mobile apps -->
     <!-- Custom Theme files -->
-    <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
-    <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
-    <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="all">
-    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+    <link href="../css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <link href="../css/style.css" type="text/css" rel="stylesheet" media="all">
+    <link href="../assets/css/style.css" type="text/css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="../css/flexslider.css" type="text/css" media="screen" />
+    <link href="css/navbar.css" rel="stylesheet" />
     <!-- //Custom Theme files -->
     <!-- js -->
-    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="../js/jquery-1.11.1.min.js"></script>
     <!-- //js -->
     <!-- web-fonts -->
     <link href='//fonts.googleapis.com/css?family=Buda:300' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
     <!-- //web-fonts -->
     <!-- start-smooth-scrolling -->
-    <script type="text/javascript" src="js/move-top.js"></script>
-    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript" src="../js/move-top.js"></script>
+    <script type="text/javascript" src="../js/easing.js"></script>
     <script type="text/javascript">
         jQuery(document).ready(function ($) {
             $(".scroll").click(function (event) {
@@ -32,195 +33,212 @@
 
                 $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
             });
+
+            $('a[href="#toggle-search"], .navbar-bootsnipp .bootsnipp-search .input-group-btn > .btn[type="reset"]').on('click', function (event) {
+                event.preventDefault();
+                $('.navbar-bootsnipp .bootsnipp-search .input-group > input').val('');
+                $('.navbar-bootsnipp .bootsnipp-search').toggleClass('open');
+                $('a[href="#toggle-search"]').closest('li').toggleClass('active');
+
+                if ($('.navbar-bootsnipp .bootsnipp-search').hasClass('open')) {
+                    /* I think .focus dosen't like css animations, set timeout to make sure input gets focus */
+                    setTimeout(function () {
+                        $('.navbar-bootsnipp .bootsnipp-search .form-control').focus();
+                    }, 100);
+                }
+            });
+
+            $(document).on('keyup', function (event) {
+                if (event.which == 27 && $('.navbar-bootsnipp .bootsnipp-search').hasClass('open')) {
+                    $('a[href="#toggle-search"]').trigger('click');
+                }
+            });
+
         });
 
+        $(function () {
+            $('.navbar-blue .navbar-collapse').on('show.bs.collapse', function (e) {
+                $('.navbar-blue .navbar-collapse').not(this).collapse('hide');
+            });
+        });
 
     </script>
     <!-- //end-smooth-scrolling -->
 </head>
 <body>
-    <div class="banner">
-        <div class="banner-info">
-            <div class="banner-top">
-                <div class="container">
-                    <div class="banner-top-grids banner-top-left">
-                        <ul class="social-icons">
-                            <li><a href="#"> </a></li>
-                            <li><a href="#" class="fb"> </a></li>
-                            <li><a href="#" class="in"> </a></li>
-                            <li><a href="#" class="dott"> </a></li>
-                        </ul>
-                    </div>
-                    <div class="banner-top-grids banner-logo">
-                        <a href="index.html">
-                            <img src="images/1.png" alt="" />
-                            <span>A Member Of <span>CREDAI </span></span>
-                        </a>
-                    </div>
-                    <div class="banner-top-grids banner-top-right">
-                        <p><span class="glyphicon glyphicon-earphone"></span> +91 9437191427 / 9937184695  </p>
-                        <p><span class="glyphicon glyphicon-info-sign">Email : info@bivabdevelopers.com</span></p>
-                    </div>
-                    <div class="clearfix"> </div>
+    <nav class="navbar-blue" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="logoSection">
+                <div class="navbar-header navbar-default">
+                    <button type="button" class="navbar-toggle navbar-user" data-toggle="collapse" data-target="#navbar-collapse-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+
+                    </button>
+
+                    <button type="button" class="navbar-toggle navbar-menu" data-toggle="collapse" data-target="#navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="http://bivaba.liveodia.co.in">
+                        <img src="images/logo1.png" />
+                    </a>
                 </div>
             </div>
-            <!-- banner-text -->
-            <div class="banner-text">
-                <h2>Bivaba</h2><br>
-                <p>Stands for integrity</p>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="menuSection">
+                <div class="collapse navbar-collapse navbar-default" id="navbar-collapse-1">
+                    <!--<ul class="nav navbar-nav client-nav navbar-right">
+                        <li>
+                            <a href="index.html">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-home glyphicon glyphicon-home"></i>
+                                </span>
+                                <span>Associate Corner</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-home glyphicon glyphicon-home"></i>
+                                </span>
+                                <span>Support Tool</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-home glyphicon glyphicon-home"></i>
+                                </span>
+                                <span>Site Visit</span>
+                            </a>
+                        </li>
 
-            </div>
-            <!-- //banner-text -->
-            <!-- top-navigation -->
-            <div class="main">
-                <div class="container">
-                    <nav id="menu" class="nav top-nav">
-                        <button class="navtoogle">
-                            <span class="icon-menu glyphicon glyphicon-menu-hamburger"> </span> Menu
-                        </button>
-                        <ul>
-                            <li>
-                                <a href="index.html">
-                                    <span class="icon">
-                                        <i aria-hidden="true" class="icon-home glyphicon glyphicon-home"></i>
-                                    </span>
-                                    <span>Home</span>
-                                </a>
-                            </li>
-                            <li id="about">
-                                <a href="#" class="cityclick">
-                                    <span class="icon">
-                                        <i aria-hidden="true" class="icon-services glyphicon glyphicon-info-sign"></i>
-                                    </span>
-                                    <span>About</span>
-                                </a>
-                                <ul class="aboutcitydrop">
-                                    <a href="companyprofile.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Company Profile</a>
-                                    <a href="companyprofile.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>EHS Policy</a>
-                                    <a href="companyprofile.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Our Strength </a>
-                                    <a href="companyprofile.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Founder Credentials </a>
-                                </ul>
-                            </li>
-                            <li id="service">
-                                <a href="services.html" class="cityclick">
-                                    <span class="icon">
-                                        <i aria-hidden="true" class="icon-portfolio glyphicon glyphicon-cog"></i>
-                                    </span>
-                                    <span>Projects</span>
-                                </a>
-                                <ul class="servicecitydrop">
-                                    <a href="#ongoing" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>On-Going Project</a>
-                                    <a href="#upcoming" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Up-Coming Project</a>
-                                    <a href="#completed" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Completed Project  </a>
-                                </ul>
-                            </li>
-                            <li id="Recidencial">
-                                <a href="gallery.html">
-                                    <span class="icon">
-                                        <i aria-hidden="true" class="icon-blog glyphicon glyphicon-picture"></i>
-                                    </span>
-                                    <span>Recidencial</span>
-                                </a>
-                                <ul class="recidencialcitydrop">
-                                    <a href="#" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Bivab Aangan</a>
-                                </ul>
-                            </li>
+                    </ul>-->
+                </div>
 
-                            <li>
-                                <a href="codes.html" onclick="$('#section-5').animatescroll();">
-                                    <span class="icon">
-                                        <i aria-hidden="true" class="icon-team glyphicon glyphicon-check"></i>
-                                    </span>
-                                    <span>Commercial</span>
-                                </a>
-                            </li>
-                            <li id="Tools">
-                                <a href="codes.html" onclick="$('#section-5').animatescroll();">
-                                    <span class="icon">
-                                        <i aria-hidden="true" class="icon-team glyphicon glyphicon-check"></i>
-                                    </span>
-                                    <span>Tools</span>
-                                </a>
-                                <ul class="toolscitydrop">
-                                    <a href="#" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>EMI Calculator</a>
-                                    <a href="#" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Checklist For Loan</a>
-                                    <a href="#" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>FAQ</a>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="contact.html" onclick="$('#section-6').animatescroll();">
-                                    <span class="icon">
-                                        <i aria-hidden="true" class="icon-contact glyphicon glyphicon-envelope"></i>
-                                    </span>
-                                    <span>Contact Us</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <!-- script-for-menu -->
+                <!-- User menu to show on screens < 768px -->
+                <div class="collapse navbar-collapse navbar-default" id="navbar-collapse-2">
                     <script>
-                        $(document).ready(function () {
-                            $('a[href^="#"]').on('click', function (e) {
-                                e.preventDefault();
-                                var target = this.hash;
-                                var $target = $(target);
-                                $('html, body').stop().animate({
-                                    'scrollTop': $target.offset().top
-                                }, 600, 'swing', function () {
-                                    window.location.hash = target;
-                                });
-                            });
-                            $(".aboutcitydrop").hide();
-                            $(".toolscitydrop").hide();
-                            $(".servicecitydrop").hide();
-                            $(".recidencialcitydrop").hide();
-                            $("#about").mouseover(function () {
-
-                                $(".aboutcitydrop").slideDown('slow');
-                            });
-
-                            $("#about").mouseleave(function () {
-                                $(".aboutcitydrop").slideUp('slow');
-                            });
-                            $("#Tools").mouseover(function () {
-
-                                $(".toolscitydrop").slideDown('slow');
-                            });
-
-                            $("#Tools").mouseleave(function () {
-                                $(".toolscitydrop").slideUp('slow');
-                            });
-                            $("#service").mouseover(function () {
-
-                                $(".servicecitydrop").slideDown('slow');
-                            });
-
-                            $("#service").mouseleave(function () {
-                                $(".servicecitydrop").slideUp('slow');
-                            });
-
-                            $("#Recidencial").mouseover(function () {
-                                $(".recidencialcitydrop").slideDown('slow');
-                            });
-
-                            $("#Recidencial").mouseleave(function () {
-                                $(".recidencialcitydrop").slideUp('slow');
-                            });
-                            $(".navtoogle").click(function () {
-                                $(".top-nav ul").slideToggle("slow", function () {
-                                });
-                            });
+                        $(function () {
+                            $(".dropdown").hover(
+                                    function () {
+                                        $('.dropdown-menu', this).stop(true, true).fadeIn("fast");
+                                        $(this).toggleClass('open');
+                                        $('b', this).toggleClass("caret caret-up");
+                                    },
+                                    function () {
+                                        $('.dropdown-menu', this).stop(true, true).fadeOut("fast");
+                                        $(this).toggleClass('open');
+                                        $('b', this).toggleClass("caret caret-up");
+                                    });
                         });
                     </script>
-                    <!-- //script-for-menu -->
-                    <script src="js/modernizr.custom.js"></script>
+                    <ul class="nav navbar-nav client-nav navbar-left">
+                        <li class="active">
+                            <a href="index.html">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-home glyphicon glyphicon-home"></i>
+                                </span>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li class="dropdown ">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-services glyphicon glyphicon-info-sign"></i>
+                                </span>
+                                <span>About</span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul role="menu" class="dropdown-menu" aria-labelledby="drop1">
+                                <li><a href="companyprofile.html" data-id="myTabContent" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Company Profile</a></li>
+                                <li><a href="companyprofile.html" data-id="carl" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>EHS Policy</a></li>
+                                <li><a href="companyprofile.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Our Strength </a></li>
+                                <li><a href="companyprofile.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Founder Credentials </a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown ">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-portfolio glyphicon glyphicon-cog"></i>
+                                </span>
+                                <span>Projects</span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu animated flipInX" role="menu">
+                                <li><a href="projects.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>On-Going Project</a></li>
+                                <li><a href="projects.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Up-Coming Project</a></li>
+                                <li><a href="projects.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Completed Project  </a></li>
+                            </ul>
+                        </li>
+                        <!--<li class="dropdown ">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-blog glyphicon glyphicon-picture"></i>
+                                </span>
+                                <span>Residential</span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu animated flipInX" role="menu">
+                                <li><a href="bivabaangan.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Bivab Aangan</a></li>
+                            </ul>
+                        </li>-->
+                        <li class="dropdown ">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-blog glyphicon glyphicon-picture"></i>
+                                </span>
+                                <span>Commercial</span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu animated flipInX" role="menu">
+                                <li><a href="bivabaangan.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Bivab Aangan</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown ">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-team glyphicon glyphicon-check"></i>
+                                </span>
+                                <span>Tools</span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu animated flipInX" role="menu">
+                                <li><a href="toolemi.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>EMI Calculator</a></li>
+                                <li><a href="checklist.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Checklist For Loan</a></li>
+                                <li><a href="faq.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>FAQ</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown ">
+                            <a href="index.html">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-contact glyphicon glyphicon-envelope"></i>
+                                </span>
+                                <span>Contact Us</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <!-- //top-navigation -->
-            <div class="clearfix"> </div>
+            <!--<div class="collapse navbar-collapse navbar-right">
+                <p class="mytitle">
+                    Sales    <i class="glyphicon glyphicon-phone"></i>
+                    +91 977 884 4449
+                </p><p class="mytitle">
+                    ( 10.30 AM - 6.30 PM     MON - SUN )
+                </p>
+            </div>-->
         </div>
-    </div>
+    </nav>
+    <!-- /.navbar-collapse -->
     <!-- //banner -->
+    <!--Courosel Starts-->
     <!-- welcome -->
     <div class="welcome" id="ongoing">
         <div class="container">
@@ -237,16 +255,48 @@
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner">
                             <div class="item active">
-                                <img src="../images/img3.jpg" alt="Los Angeles" style="width:100%;">
+                                <img src="images/ongoing1.png" alt="Los Angeles" style="width:100%;">
+                            </div>
+                            <div class="item">
+                                <img src="images/ongoing2.png" alt="Chicago" style="width:100%;" />
                             </div>
 
                             <div class="item">
-                                <img src="../images/img1.jpg" alt="Chicago" style="width:100%;">
+                                <img src="images/ongoing6.png" alt="New york" style="width:100%;" />
+                            </div>
+                        </div>
+
+                        <!-- Left and right controls -->
+                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img src="images/ongoingheritage1.png" alt="Los Angeles" style="width:100%;" />
+                            </div>
+                            <div class="item">
+                                <img src="images/ongoingheritage2.png" alt="Chicago" style="width:100%;" />
                             </div>
 
                             <div class="item">
-                                <img src="../images/img2.jpg" alt="New york" style="width:100%;">
+                                <img src="images/ongoingheritage3.png" alt="New york" style="width:100%;"  />
                             </div>
+                            <!---->
                         </div>
 
                         <!-- Left and right controls -->
@@ -262,9 +312,76 @@
                 </div>
                 <div class="col-md-6 welcome-right">
                     <h4> On Going Projects </h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt lorem sed velit fermentum lobortis. Fusce eu semper lacus, eget placerat mauris. Sed lectus tellus, sodales id elit a, feugiat porttitor nulla. Sed porta magna vitae nisl vulputate lacinia. Morbi malesuada sollicitudin tortor, vitae pharetra nunc lacinia eget. Nulla ornare purus nunc, ut dapibus leo sodales adipiscing. Praesent sit amet justo diam. Quisque sagittis egestas sem vitae vestibulum. Quisque nec lacus ornare, volutpat arcu in, lacinia dolor. </p>
+                    <div class="row">
+                        <h3>Bivab Aangan - Residential apartment </h3>
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <th> Location:</th>
+                                    <td>Madanpur, Near GITA Engineering College.</td>
+                                </tr>
+                                <tr>
+                                    <th>  Project Land Area:</th>
+                                    <td>   1 Acre</td>
+
+                                </tr>
+                                <tr>
+                                    <th>  Construction Area:</th>
+                                    <td> 84</td>
+
+                                </tr>
+                                <tr>
+                                    <th>  No.of Units:</th>
+                                    <td>84</td>
+
+                                </tr>
+                                <tr>
+                                    <th>   Project initiated:</th>
+                                    <td>  2013</td>
+
+                                </tr>
+                                <tr>
+                                    <th>  Expected Project completion Year:</th>
+                                    <td>2017</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <h3>Bivab Heritage - Residential apartment </h3>
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <th> Location:</th>
+                                    <td>Kapilprasad, Near Bhubaneswar International  </td>
+                                </tr>
+                                <tr>
+                                    <th>  Project Land Area:</th>
+                                    <td>   Airport</td>
+
+                                </tr>
+                                <tr>
+                                    <th>  Construction Area:</th>
+                                    <td> 1 Acre</td>
+
+                                </tr>
+                                <tr>
+                                    <th>  No.of Units:</th>
+                                    <td>36</td>
+                                </tr>
+                                <tr>
+                                    <th>   Project initiated:</th>
+                                    <td>  Mid 2016</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                     <a href="single.html" class="more">Read More</a>
                 </div>
+               
                 <div class="clearfix"> </div>
             </div>
         </div>
@@ -284,15 +401,14 @@
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner">
                             <div class="item active">
-                                <img src="images/img2.jpg" alt="Los Angeles" style="width:100%;">
+                                <img src="images/upcominggt1.png" alt="Los Angeles" style="width:100%;">
+                            </div>
+                            <div class="item">
+                                <img src="images/upcominggt2.png" alt="Chicago" style="width:100%;" />
                             </div>
 
                             <div class="item">
-                                <img src="../images/img3.jpg" alt="Chicago" style="width:100%;">
-                            </div>
-
-                            <div class="item">
-                                <img src="../images/img4.jpg" alt="New york" style="width:100%;">
+                                <img src="images/upcominggt3.png"  alt="New york" style="width:100%;" />
                             </div>
                         </div>
 
@@ -309,7 +425,42 @@
                 </div>
                 <div class="col-md-6 welcome-right">
                     <h4> Up Coming  Projects </h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt lorem sed velit fermentum lobortis. Fusce eu semper lacus, eget placerat mauris. Sed lectus tellus, sodales id elit a, feugiat porttitor nulla. Sed porta magna vitae nisl vulputate lacinia. Morbi malesuada sollicitudin tortor, vitae pharetra nunc lacinia eget. Nulla ornare purus nunc, ut dapibus leo sodales adipiscing. Praesent sit amet justo diam. Quisque sagittis egestas sem vitae vestibulum. Quisque nec lacus ornare, volutpat arcu in, lacinia dolor. </p>
+                    <p>Bivab Golden Triangle - Residential Apartment Cum Commercial – Mall & Hotel.</p>
+                    <div class="row">
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <th> Location:</th>
+                                    <td>Madanpur, Near GITA Engineering College.</td>
+                                </tr>
+                                <tr>
+                                    <th>  Project Land Area:</th>
+                                    <td>   1 Acre</td>
+
+                                </tr>
+                                <tr>
+                                    <th>  Construction Area:</th>
+                                    <td> 84</td>
+
+                                </tr>
+                                <tr>
+                                    <th>  No.of Units:</th>
+                                    <td>84</td>
+
+                                </tr>
+                                <tr>
+                                    <th>   Project initiated:</th>
+                                    <td>  2013</td>
+
+                                </tr>
+                                <tr>
+                                    <th>  Expected Project completion Year:</th>
+                                    <td>2017</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                     <a href="single.html" class="more">Read More</a>
                 </div>
                 <div class="clearfix"> </div>
@@ -318,53 +469,6 @@
     </div>
     <!-- //slid -->
     <!-- latest -->
-    <div class="welcome" id="completed">
-        <div class="container">
-            <div class="w3ls-row alert">
-                <div class="col-md-6 welcome-left">
-                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                        <!-- Indicators -->
-                        <ol class="carousel-indicators">
-                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#myCarousel" data-slide-to="1"></li>
-                            <li data-target="#myCarousel" data-slide-to="2"></li>
-                        </ol>
-
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                <img src="images/img4.jpg" alt="Los Angeles" style="width:100%;">
-                            </div>
-
-                            <div class="item">
-                                <img src="../images/img3.jpg" alt="Chicago" style="width:100%;">
-                            </div>
-
-                            <div class="item">
-                                <img src="../images/img2.jpg" alt="New york" style="width:100%;">
-                            </div>
-                        </div>
-
-                        <!-- Left and right controls -->
-                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                            <span class="glyphicon glyphicon-chevron-left"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                            <span class="glyphicon glyphicon-chevron-right"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-6 welcome-right">
-                    <h4> Completed Projects </h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt lorem sed velit fermentum lobortis. Fusce eu semper lacus, eget placerat mauris. Sed lectus tellus, sodales id elit a, feugiat porttitor nulla. Sed porta magna vitae nisl vulputate lacinia. Morbi malesuada sollicitudin tortor, vitae pharetra nunc lacinia eget. Nulla ornare purus nunc, ut dapibus leo sodales adipiscing. Praesent sit amet justo diam. Quisque sagittis egestas sem vitae vestibulum. Quisque nec lacus ornare, volutpat arcu in, lacinia dolor. </p>
-                    <a href="single.html" class="more">Read More</a>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-        </div>
-    </div>
     <!-- //latest -->
     <!-- footer -->
     <div class="footer">
@@ -410,7 +514,7 @@
                 <div class="clearfix"> </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2017 Fascinating . All rights reserved | Design by <a href="http://w3layouts.com">W3layouts.</a></p>
+               
             </div>
         </div>
     </div>

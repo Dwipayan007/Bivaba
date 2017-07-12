@@ -30,7 +30,6 @@
         jQuery(document).ready(function ($) {
             $(".scroll").click(function (event) {
                 event.preventDefault();
-
                 $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
             });
 
@@ -53,168 +52,215 @@
                     $('a[href="#toggle-search"]').trigger('click');
                 }
             });
+           
 
-        });
+            $(function () {
+                $('.navbar-blue .navbar-collapse').on('show.bs.collapse', function (e) {
+                    $('.navbar-blue .navbar-collapse').not(this).collapse('hide');
+                });
+            });
 
 
+            var scroll = $.cookie('scroll');
+            if(scroll){
+                scrollToID(scroll, 1000);
+                $.removeCookie('scroll');
+            }
+
+            // Handle event onclick, setting the cookie when the href != #
+            $('.nav a').click(function (e) {
+                e.preventDefault();
+                var id = $(this).data('id');
+                var href = $(this).attr('href');
+                if(href === '#'){
+                    scrollToID(id, 1000);
+                }else{
+                    $.cookie('scroll', id);
+                    window.location.href = href;
+                }
+            });
+
+            // scrollToID function
+            function scrollToID(id, speed) {
+                var offSet = 70;
+                var obj = $('#' + id).offset();
+                var targetOffset = obj.top - offSet;
+                $('html,body').animate({ scrollTop: targetOffset }, speed);
+            }
     </script>
-    <!-- //end-smooth-scrolling -->
 </head>
 <body>
-    <div class="banner">
+    <nav class="navbar-blue" role="navigation">
         <div class="container">
-            <nav class="navbar navbar-default navbar-static-top" role="navigation">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <!-- Brand -->
-                        <a class="navbar-brand" href="#"></a>
-                    </div>
-                    <div class="collapse navbar-collapse animated fadeIn navbar-right" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav animated fadeIn">
-                            <li class="active">
-                                <a href="index.html">
-                                    <span class="icon">
-                                        <i aria-hidden="true" class="icon-home glyphicon glyphicon-home"></i>
-                                    </span>
-                                    <span>Home</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <span class="icon">
-                                        <i aria-hidden="true" class="icon-services glyphicon glyphicon-info-sign"></i>
-                                    </span>
-                                    <span>About</span>
-                                    <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu animated flipInX" role="menu">
-                                    <li><a href="companyprofile.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Company Profile</a></li>
-                                    <li><a href="companyprofile.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>EHS Policy</a></li>
-                                    <li><a href="companyprofile.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Our Strength </a></li>
-                                    <li><a href="companyprofile.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Founder Credentials </a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <span class="icon">
-                                        <i aria-hidden="true" class="icon-portfolio glyphicon glyphicon-cog"></i>
-                                    </span>
-                                    <span>Projects</span>
-                                    <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu animated flipInX" role="menu">
-                                    <li><a href="projects.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>On-Going Project</a></li>
-                                    <li><a href="projects.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Up-Coming Project</a></li>
-                                    <li><a href="projects.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Completed Project  </a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <span class="icon">
-                                        <i aria-hidden="true" class="icon-blog glyphicon glyphicon-picture"></i>
-                                    </span>
-                                    <span>Residential</span>
-                                    <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu animated flipInX" role="menu">
-                                    <li><a href="bivabaangan.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Bivab Aangan</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <span class="icon">
-                                        <i aria-hidden="true" class="icon-team glyphicon glyphicon-check"></i>
-                                    </span>
-                                    <span>Tools</span>
-                                    <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu animated flipInX" role="menu">
-                                    <li><a href="toolemi.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>EMI Calculator</a></li>
-                                    <li><a href="checklist.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Checklist For Loan</a></li>
-                                    <li><a href="faq.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>FAQ</a></li>
-                                </ul>
-                            </li>
-                            <li class="active">
-                                <a href="index.html">
-                                    <span class="icon">
-                                        <i aria-hidden="true" class="icon-contact glyphicon glyphicon-envelope"></i>
-                                    </span>
-                                    <span>Contact Us</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div><!-- /.navbar-collapse -->
-                </div><!-- /.container-fluid -->
-            </nav>
-        </div>
-        <div class="container">
-            <nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <!-- logo -->
-                        <a class="navbar-brand" href="#"><img alt="alternative text" src="images/credai-orissa.png" /></a>
-                    </div>
-                    <div class="collapse navbar-collapse animated fadeIn" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav animated fadeIn text16">
-                            <li class="phone_no"><span class="glyphicon glyphicon-phone"> 91 9437191427/9937184695</span></li>
-                            <li class="phone_no"><span class="glyphicon glyphicon-send"> info@bivabdevelopers.com</span></li>
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><b> Login</b> <span class="caret"></span></a>
-                                <ul id="login-dp" class="dropdown-menu">
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <!-- Login -->
-                                                <div class="social-buttons">
-                                                    <div class="iconSpecial"><i class="glyphicon glyphicon-user"></i>Login</div>
-                                                </div>
-                                                <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
-                                                    <div class="form-group">
-                                                        <label class="sr-only" for="exampleInputEmail2">login</label>
-                                                        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Entrar Usuário" required>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="sr-only" for="exampleInputPassword2">Senha</label>
-                                                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
-                                                        <div class="help-block text-right"><a href="">Esquecí minha senha ?</a></div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <button type="submit" class="btn btn-primary btn-block">Entrar</button>
-                                                    </div>
-                                                    <div class="checkbox text-dark">
-                                                        <label>
-                                                            <input type="checkbox"> Manter-me Logado
-                                                        </label>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div><!-- /.navbar-collapse -->
-                </div><!-- /.container-fluid -->
-            </nav>
-            <div class="clearfix"> </div>
-        </div>
-    </div>
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="logoSection">
+                <div class="navbar-header navbar-default">
+                    <button type="button" class="navbar-toggle navbar-user" data-toggle="collapse" data-target="#navbar-collapse-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
 
+                    </button>
 
+                    <button type="button" class="navbar-toggle navbar-menu" data-toggle="collapse" data-target="#navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="http://bivaba.liveodia.co.in">
+                        <img src="images/logo1.png" />
+                    </a>
+                </div>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="menuSection">
+                <div class="collapse navbar-collapse navbar-default" id="navbar-collapse-1">
+                    <!--<ul class="nav navbar-nav client-nav navbar-right">
+                        <li>
+                            <a href="index.html">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-home glyphicon glyphicon-home"></i>
+                                </span>
+                                <span>Associate Corner</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-home glyphicon glyphicon-home"></i>
+                                </span>
+                                <span>Support Tool</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-home glyphicon glyphicon-home"></i>
+                                </span>
+                                <span>Site Visit</span>
+                            </a>
+                        </li>
+                       
+                    </ul>-->
+                </div>
+
+                <!-- User menu to show on screens < 768px -->
+                <div class="collapse navbar-collapse navbar-default" id="navbar-collapse-2">
+                    <script>
+                        $(function () {
+                            $(".dropdown").hover(
+                                    function () {
+                                        $('.dropdown-menu', this).stop(true, true).fadeIn("fast");
+                                        $(this).toggleClass('open');
+                                        $('b', this).toggleClass("caret caret-up");
+                                    },
+                                    function () {
+                                        $('.dropdown-menu', this).stop(true, true).fadeOut("fast");
+                                        $(this).toggleClass('open');
+                                        $('b', this).toggleClass("caret caret-up");
+                                    });
+                        });
+                    </script>
+                    <ul class="nav navbar-nav client-nav navbar-left">
+                        <li class="active">
+                            <a href="index.html">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-home glyphicon glyphicon-home"></i>
+                                </span>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li class="dropdown ">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-services glyphicon glyphicon-info-sign"></i>
+                                </span>
+                                <span>About</span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul role="menu" class="dropdown-menu" aria-labelledby="drop1">
+                                <li><a href="companyprofile.html" data-id="myTabContent" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Company Profile</a></li>
+                                <li><a href="companyprofile.html" data-id="carl" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>EHS Policy</a></li>
+                                <li><a href="companyprofile.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Our Strength </a></li>
+                                <li><a href="companyprofile.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Founder Credentials </a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown ">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-portfolio glyphicon glyphicon-cog"></i>
+                                </span>
+                                <span>Projects</span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu animated flipInX" role="menu">
+                                <li><a href="projects.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>On-Going Project</a></li>
+                                <li><a href="projects.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Up-Coming Project</a></li>
+                                <li><a href="projects.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Completed Project  </a></li>
+                            </ul>
+                        </li>
+                        <!--<li class="dropdown ">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-blog glyphicon glyphicon-picture"></i>
+                                </span>
+                                <span>Residential</span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu animated flipInX" role="menu">
+                                <li><a href="bivabaangan.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Bivab Aangan</a></li>
+                            </ul>
+                        </li>-->
+                        <li class="dropdown ">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-blog glyphicon glyphicon-picture"></i>
+                                </span>
+                                <span>Commercial</span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu animated flipInX" role="menu">
+                                <li><a href="bivabaangan.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Bivab Aangan</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown ">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-team glyphicon glyphicon-check"></i>
+                                </span>
+                                <span>Tools</span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu animated flipInX" role="menu">
+                                <li><a href="toolemi.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>EMI Calculator</a></li>
+                                <li><a href="checklist.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Checklist For Loan</a></li>
+                                <li><a href="faq.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>FAQ</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown ">
+                            <a href="index.html">
+                                <span class="icon">
+                                    <i aria-hidden="true" class="icon-contact glyphicon glyphicon-envelope"></i>
+                                </span>
+                                <span>Contact Us</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--<div class="collapse navbar-collapse navbar-right">
+                <p class="mytitle">
+                    Sales    <i class="glyphicon glyphicon-phone"></i>
+                    +91 977 884 4449
+                </p><p class="mytitle">
+                    ( 10.30 AM - 6.30 PM     MON - SUN )
+                </p>
+            </div>-->
+        </div>
+    </nav>
+    <!-- /.navbar-collapse -->
     <!-- //banner -->
     <!--Courosel Starts-->
     <div class="welcome">
@@ -310,20 +356,30 @@
                             <li data-target="#myCarousel1" data-slide-to="0" class="active"></li>
                             <li data-target="#myCarousel1" data-slide-to="1"></li>
                             <li data-target="#myCarousel1" data-slide-to="2"></li>
+                            <li data-target="#myCarousel1" data-slide-to="3"></li>
+                            <li data-target="#myCarousel1" data-slide-to="4"></li>
+                            
                         </ol>
 
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner">
                             <div class="item active">
-                                <img src="../images/img3.jpg" alt="Los Angeles" style="width:100%;">
+                                <img src="images/completed1.png" alt="Los Angeles" style="width:100%;"/>
+                               
                             </div>
 
                             <div class="item">
-                                <img src="../images/img1.jpg" alt="Chicago" style="width:100%;">
+                                <img src="images/completed2.png" alt="Los Angeles" style="width:100%;" />
                             </div>
 
                             <div class="item">
-                                <img src="../images/img2.jpg" alt="New york" style="width:100%;">
+                                <img src="images/completed3.png" alt="Los Angeles" style="width:100%;" />
+                            </div>
+                            <div class="item">
+                                <img src="images/completed4.png" alt="Los Angeles" style="width:100%;" />
+                            </div>
+                            <div class="item">
+                                <img src="images/completed5.png" alt="Los Angeles" style="width:100%;" />
                             </div>
                         </div>
 
@@ -429,38 +485,183 @@
     </div>-->
     <!-- //slid -->
     <!-- latest -->
+    <!--team-->
+    <!--<div class="team">
+        <div class="container">
+            <div class="title">
+                <h3>Testimonial</h3>
+                <p>Duis euismod massa ut sem fringilla blandit. Proin vel enim nec ipsum finibus. </p>
+            </div>
+            <div class="team-grids">
+                <ul class="ch-grid">
+                    <li class="ch-grid-item">
+                        <div class="ch-item ch-img-1">
+                            <div class="ch-info">
+                                <h3>Designer</h3>
+                                <p>by Daniel Nyari</p>
+                                <ul class="social-icons">
+                                    <li><a href="#"> </a></li>
+                                    <li><a href="#" class="fb"> </a></li>
+                                    <li><a href="#" class="in"> </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="ch-grid-item">
+                        <div class="ch-item ch-img-2">
+                            <div class="ch-info">
+                                <h3>Designer</h3>
+                                <p>by Johnathen</p>
+                                <ul class="social-icons">
+                                    <li><a href="#"> </a></li>
+                                    <li><a href="#" class="fb"> </a></li>
+                                    <li><a href="#" class="in"> </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="ch-grid-item">
+                        <div class="ch-item ch-img-3">
+                            <div class="ch-info">
+                                <h3>Designer</h3>
+                                <p>by Fedrick Paul</p>
+                                <ul class="social-icons">
+                                    <li><a href="#"> </a></li>
+                                    <li><a href="#" class="fb"> </a></li>
+                                    <li><a href="#" class="in"> </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="ch-grid-item">
+                        <div class="ch-item ch-img-4">
+                            <div class="ch-info">
+                                <h3>Designer</h3>
+                                <p>by Stellawil vari</p>
+                                <ul class="social-icons">
+                                    <li><a href="#"> </a></li>
+                                    <li><a href="#" class="fb"> </a></li>
+                                    <li><a href="#" class="in"> </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>-->
+    <!--//team-->
     <div class="latest">
         <div class="container">
             <div class="title">
-                <h3>Latest Properties</h3>
-                <p>Duis euismod massa ut sem fringilla blandit. Proin vel enim nec ipsum finibus. </p>
+                <h3>Testimonials</h3>
             </div>
-            <div class="w3ls-row">
-                <div class="col-sm-4 col-md-4  w3latest-grids">
-                    <img src="images/img2.jpg" class="img-responsive" alt="" />
-                    <div class="w3latest-grids-text">
-                        <h4>Proin vel enim nec ipsum </h4>
-                        <p>Sed tincidunt nec ipsum</p>
-                        <a href="single.html" class="more">Read More</a>
+            <div class="container content">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active">
+                        </li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1">
+                        </li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2">
+                        </li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="thumbnail adjust1">
+                                        <div class="col-md-3 col-sm-3 col-xs-12">
+                                            <img src="images/img4.jpg" class="img-responsive" alt="" />
+                                        </div>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <div class="caption">
+                                                <p class="text-info lead adjust2">This is testimal slider</p>
+                                                <p>
+                                                    <span class="glyphicon glyphicon-thumbs-up">
+                                                    </span> This is a testimonial window. Feedback of user can be displayed here.
+                                                </p>
+                                                <blockquote class="adjust2">
+                                                    <p>zubair saif </p>
+                                                    <small>
+                                                        <cite title="Source Title">
+                                                            <i class="glyphicon glyphicon-globe"></i>
+                                                            www.googler700.blogspot.com
+                                                        </cite>
+                                                    </small>
+                                                </blockquote>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="thumbnail adjust1">
+                                        <div class="col-md-3 col-sm-3 col-xs-12">
+                                            <img src="images/img3.jpg" class="img-responsive" alt="" />
+                                        </div> <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <div class="caption">
+                                                <p class="text-info lead adjust2">I can't wait to test this out.</p>
+                                                <p>
+                                                    <span class="glyphicon glyphicon-thumbs-up">
+                                                    </span> This is a testimonial window. Feedback of user can be displayed here.
+                                                </p> <blockquote class="adjust2">
+                                                    <p>zubair saif</p>
+                                                    <small>
+                                                        <cite title="Source Title">
+                                                            <i class="glyphicon glyphicon-globe">
+                                                            </i> www.googler700.blogspot.com
+                                                        </cite>
+                                                    </small>
+                                                </blockquote>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="thumbnail adjust1">
+                                        <div class="col-md-3 col-sm-3 col-xs-12">
+                                            <img src="images/img4.jpg" class="img-responsive" alt="" />
+                                        </div>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <div class="caption">
+                                                <p class="text-info lead adjust2">I can't wait to test this out.</p>
+                                                <p>
+                                                    <span class="glyphicon glyphicon-thumbs-up"></span>
+                                                    This is a testimonial window. Feedback of user can be displayed here.
+                                                </p> <blockquote class="adjust2">
+                                                    <p>zubair saif</p>
+                                                    <small>
+                                                        <cite title="Source Title">
+                                                            <i class="glyphicon glyphicon-globe">
+                                                            </i> www.googler700.blogspot.com
+                                                        </cite>
+                                                    </small>
+                                                </blockquote>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right">
+                        </span>
+                    </a>
                 </div>
-                <div class="col-sm-4 col-md-4  w3latest-grids">
-                    <img src="images/img3.jpg" class="img-responsive" alt="" />
-                    <div class="w3latest-grids-text">
-                        <h4>Proin vel enim nec ipsum </h4>
-                        <p>Sed tincidunt nec ipsum</p>
-                        <a href="single.html" class="more">Read More</a>
-                    </div>
-                </div>
-                <div class="col-sm-4 col-md-4  w3latest-grids">
-                    <img src="images/img4.jpg" class="img-responsive" alt="" />
-                    <div class="w3latest-grids-text">
-                        <h4>Proin vel enim nec ipsum </h4>
-                        <p>Sed tincidunt nec ipsum</p>
-                        <a href="single.html" class="more">Read More</a>
-                    </div>
-                </div>
-                <div class="clearfix"> </div>
             </div>
         </div>
     </div>
@@ -509,7 +710,7 @@
                 <div class="clearfix"> </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2017 Fascinating . All rights reserved | Design by <a href="http://w3layouts.com">W3layouts.</a></p>
+                
             </div>
         </div>
     </div>
@@ -529,8 +730,5 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/bootstrap.js"></script>
-
-
-    <app-root>Loading...</app-root>
 </body>
 </html>
