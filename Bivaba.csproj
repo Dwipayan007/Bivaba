@@ -94,6 +94,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bivabheritage.html" />
+    <Content Include="cprojectdetail.html" />
     <Content Include="css\navbar.css" />
     <Content Include="Flash\Bivab_CredI.exe" />
   </ItemGroup>
@@ -123,6 +125,7 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="upcomingproject.html" />
     <Content Include="web.config" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
