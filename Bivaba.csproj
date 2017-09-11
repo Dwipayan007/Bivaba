@@ -95,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bivabheritage.html" />
+    <Content Include="completed.html" />
     <Content Include="cprojectdetail.html" />
     <Content Include="css\navbar.css" />
     <Content Include="Flash\Bivab_CredI.exe" />
@@ -115,7 +116,15 @@
     <Content Include="images\banner\slider6.jpg" />
     <Content Include="images\banner\slider8.jpg" />
     <Content Include="images\banner\slider9.jpg" />
+    <Content Include="images\bvbest1.jpeg" />
+    <Content Include="images\bvbest1.jpg" />
+    <Content Include="images\bvbest2.jpg" />
+    <Content Include="images\commercial.png" />
+    <Content Include="images\commercial1.jpg" />
+    <Content Include="images\farm1.jpg" />
+    <Content Include="images\heritage.jpg" />
     <Content Include="index.html" />
+    <Content Include="ongoing.html" />
     <Content Include="projects.html" />
   </ItemGroup>
   <ItemGroup>
@@ -125,6 +134,7 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="upcoming.html" />
     <Content Include="upcomingproject.html" />
     <Content Include="web.config" />
     <None Include="web.Debug.config">

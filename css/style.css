@@ -21,7 +21,10 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
-    font-family: 'Buda', cursive;
+    font-size: 14px;
+    /*font-family: 'Buda', cursive;*/
+    font-weight: bolder;
+    line-height: 2em;
 }
 
 p {
@@ -208,6 +211,23 @@ ul.social-icons, .banner-top-right p {
     font-weight: 600;
 }
 
+.title1 h4 {
+    font-size: 1.5em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    color: #FC6914;
+    font-weight: 600;
+}
+.title2 h4 {
+    font-size: 2.5em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    color: #FC6914;
+    font-weight: 600;
+}
+
 .title p {
     text-align: center;
     margin-top: 0.2em;
@@ -220,10 +240,15 @@ ul.social-icons, .banner-top-right p {
 }
 
 p {
-    font-size: 1em;
-    color: #555;
-    line-height: 2em;
-    font-weight: 600;
+    margin: 6px 0;
+    font-family: verdana;
+    color: #595959;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 20px;
+    text-align: justify;
+    vertical-align: baseline;
+    font-size: 13.3333px;
 }
 
 .welcome-left, .welcome-right {
@@ -258,12 +283,14 @@ img.img-responsive {
 }
 
     .welcome-right h4 {
-        font-size: 2.1em;
+        margin-top: -1.5em;
+        font-size: 2em;
         color: #000;
         margin-bottom: 0.8em;
     }
 
 a.more {
+    float: right;
     font-size: 1em;
     color: #fff;
     background: #1ABC9C;
@@ -398,7 +425,7 @@ a.close {
 }
 
     .footer-w3lsrow .footer-address ul li:nth-child(2) {
-        margin: 1em 0;
+        margin: 0em 0;
     }
 
     .footer-w3lsrow .footer-address ul li a {
@@ -534,11 +561,11 @@ a.close {
 }
 
 .about h4 {
-    font-size: 2em;
+    /*font-size: 2em;*/
     color: #1ABC9C;
     font-weight: 600;
     letter-spacing: 2px;
-    margin-bottom: 0.5em;
+    /* margin-bottom: 0.5em; */
 }
 
 .about-left img {
@@ -591,10 +618,10 @@ a.close {
         }
 
 .about .tabcontent-grids ul li {
-    display: block;
-    color: #999;
-    margin-top: 1em;
-    font-size: 1em;
+    display: inline-table;
+    color: #a06c57;
+    margin-top: .6em;
+    font-size: 1.1em;
 }
 
     .about .tabcontent-grids ul li span.glyphicon {
@@ -3403,6 +3430,59 @@ h2.typoh2 {
     margin-bottom: -4em;
     margin-top: 1em;
 }
-.welcome1{
-    margin-top:2em;
+
+.welcome1 {
+    margin-top: 2em;
+}
+
+.h4padding-top {
+    padding-top: 0em;
+    font-size: 16px;
+}
+
+.company-title {
+    margin-bottom: 0em;
+    /* padding-top: 1em; */
+    /* border-bottom: 1px; */
+    border-bottom: 1px solid #ca7217;
+}
+
+    .company-title h3 {
+        font-size: 1.9em;
+        text-align: left;
+        color: #FC6914;
+        font-weight: 600;
+    }
+
+.table-width {
+    width: 70%;
+}
+
+.about h4.project-name {
+    color: #ae7416 !important;
+}
+
+
+div #founder p {
+    font-size: 1em;
+    color: #5e5656;
+    line-height: 1.6em;
+    font-weight: 500;
+    font-style: normal;
+    font-family: sans-serif;
+}
+
+td {
+    width: 200px !important;
+    table-layout: fixed;
+}
+
+
+.text-float-right {
+    float: right;
+    margin-top: 18px;
+}
+.welcome-left h3 {
+    color: rebeccapurple;
+    background-color: rgba(212, 231, 56, 0.59);
 }

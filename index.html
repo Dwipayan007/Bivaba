@@ -52,7 +52,7 @@
                     $('a[href="#toggle-search"]').trigger('click');
                 }
             });
-           
+
 
             $(function () {
                 $('.navbar-blue .navbar-collapse').on('show.bs.collapse', function (e) {
@@ -92,7 +92,6 @@
 <body>
     <nav class="navbar-blue" role="navigation">
         <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="logoSection">
                 <div class="navbar-header navbar-default">
                     <button type="button" class="navbar-toggle navbar-user" data-toggle="collapse" data-target="#navbar-collapse-2">
@@ -117,36 +116,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="menuSection">
                 <div class="collapse navbar-collapse navbar-default" id="navbar-collapse-1">
-                    <!--<ul class="nav navbar-nav client-nav navbar-right">
-                        <li>
-                            <a href="index.html">
-                                <span class="icon">
-                                    <i aria-hidden="true" class="icon-home glyphicon glyphicon-home"></i>
-                                </span>
-                                <span>Associate Corner</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="index.html">
-                                <span class="icon">
-                                    <i aria-hidden="true" class="icon-home glyphicon glyphicon-home"></i>
-                                </span>
-                                <span>Support Tool</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="index.html">
-                                <span class="icon">
-                                    <i aria-hidden="true" class="icon-home glyphicon glyphicon-home"></i>
-                                </span>
-                                <span>Site Visit</span>
-                            </a>
-                        </li>
-                       
-                    </ul>-->
                 </div>
-
-                <!-- User menu to show on screens < 768px -->
                 <div class="collapse navbar-collapse navbar-default" id="navbar-collapse-2">
                     <script>
                         $(function () {
@@ -162,6 +132,7 @@
                                         $('b', this).toggleClass("caret caret-up");
                                     });
                         });
+
                     </script>
                     <ul class="nav navbar-nav client-nav navbar-left">
                         <li class="active">
@@ -173,19 +144,12 @@
                             </a>
                         </li>
                         <li class="dropdown ">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <a href="companyprofile.html">
                                 <span class="icon">
                                     <i aria-hidden="true" class="icon-services glyphicon glyphicon-info-sign"></i>
                                 </span>
-                                <span>About</span>
-                                <span class="caret"></span>
+                                <span> About</span>
                             </a>
-                            <ul role="menu" class="dropdown-menu" aria-labelledby="drop1">
-                                <li><a href="companyprofile.html" data-id="myTabContent" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Company Profile</a></li>
-                                <li><a href="companyprofile.html" data-id="carl" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>EHS Policy</a></li>
-                                <li><a href="companyprofile.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Our Strength </a></li>
-                                <li><a href="companyprofile.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Founder Credentials </a></li>
-                            </ul>
                         </li>
                         <li class="dropdown ">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -196,23 +160,11 @@
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu animated flipInX" role="menu">
-                                <li><a href="projects.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>On-Going Project</a></li>
-                                <li><a href="projects.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Up-Coming Project</a></li>
-                                <li><a href="projects.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Completed Project  </a></li>
+                                <li><a href="ongoing.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>On-Going Project</a></li>
+                                <li><a href="upcoming.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Up-Coming Project</a></li>
+                                <li><a href="completed.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Completed Project  </a></li>
                             </ul>
                         </li>
-                        <!--<li class="dropdown ">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <span class="icon">
-                                    <i aria-hidden="true" class="icon-blog glyphicon glyphicon-picture"></i>
-                                </span>
-                                <span>Residential</span>
-                                <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu animated flipInX" role="menu">
-                                <li><a href="bivabaangan.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Bivab Aangan</a></li>
-                            </ul>
-                        </li>-->
                         <li class="dropdown ">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <span class="icon">
@@ -222,7 +174,7 @@
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu animated flipInX" role="menu">
-                                <li><a href="bivabaangan.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Bivab Aangan</a></li>
+                                <li><a href="bivabaangan.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Bivab Gulmohar</a></li>
                             </ul>
                         </li>
                         <li class="dropdown ">
@@ -230,7 +182,7 @@
                                 <span class="icon">
                                     <i aria-hidden="true" class="icon-team glyphicon glyphicon-check"></i>
                                 </span>
-                                <span>Tools</span>
+                                <span>EMI Tools</span>
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu animated flipInX" role="menu">
@@ -240,7 +192,7 @@
                             </ul>
                         </li>
                         <li class="dropdown ">
-                            <a href="index.html">
+                            <a href="contact.html">
                                 <span class="icon">
                                     <i aria-hidden="true" class="icon-contact glyphicon glyphicon-envelope"></i>
                                 </span>
@@ -345,27 +297,24 @@
         <div class="container">
             <div class="title1">
                 <h3>Welcome !</h3>
-                <p>Bivab Developers Pvt. Ltd </p>
-                <p>In the span of last 16 years Bivab developers pvt. Ltd. has been emerged as number one choice in Odisha for its finest products for it's several completed projects in strategic locations with timely delivery ,quality construction & state of the art architecture.</p>
+                <!--<p>Bivab Developers Pvt. Ltd </p>
+                <p>In the span of last 16 years Bivab developers pvt. Ltd. has been emerged as number one choice in Odisha for its finest products for it's several completed projects in strategic locations with timely delivery ,quality construction & state of the art architecture.</p>-->
             </div>
             <div class="w3ls-row1 alert">
                 <div class="col-md-6 welcome-left">
                     <div id="myCarousel1" class="carousel slide" data-ride="carousel">
-                        <!-- Indicators -->
                         <ol class="carousel-indicators">
                             <li data-target="#myCarousel1" data-slide-to="0" class="active"></li>
                             <li data-target="#myCarousel1" data-slide-to="1"></li>
                             <li data-target="#myCarousel1" data-slide-to="2"></li>
                             <li data-target="#myCarousel1" data-slide-to="3"></li>
                             <li data-target="#myCarousel1" data-slide-to="4"></li>
-                            
-                        </ol>
 
-                        <!-- Wrapper for slides -->
+                        </ol>
                         <div class="carousel-inner">
                             <div class="item active">
-                                <img src="images/completed1.png" alt="Los Angeles" style="width:100%;"/>
-                               
+                                <img src="images/completed1.png" alt="Los Angeles" style="width:100%;" />
+
                             </div>
 
                             <div class="item">
@@ -382,8 +331,6 @@
                                 <img src="images/completed5.png" alt="Los Angeles" style="width:100%;" />
                             </div>
                         </div>
-
-                        <!-- Left and right controls -->
                         <a class="left carousel-control" href="#myCarousel1" data-slide="prev">
                             <span class="glyphicon glyphicon-chevron-left"></span>
                             <span class="sr-only">Previous</span>
@@ -395,8 +342,12 @@
                     </div>
                 </div>
                 <div class="col-md-6 welcome-right">
-                    <h4> Our Foot Print </h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt lorem sed velit fermentum lobortis. Fusce eu semper lacus, eget placerat mauris. Sed lectus tellus, sodales id elit a, feugiat porttitor nulla. Sed porta magna vitae nisl vulputate lacinia. Morbi malesuada sollicitudin tortor, vitae pharetra nunc lacinia eget. Nulla ornare purus nunc, ut dapibus leo sodales adipiscing. Praesent sit amet justo diam. Quisque sagittis egestas sem vitae vestibulum. Quisque nec lacus ornare, volutpat arcu in, lacinia dolor. </p>
+                    
+                    <p>
+                        In the span of last 16 years Bivab developers pvt. Ltd. has been emerged as number one choice in Odisha for its finest products for it's several completed projects in strategic locations with timely delivery ,quality construction & state of the art architecture.
+                        Some of those stands high with immense satisfaction of its occupants are:-
+                        Bivab Imperial Mansion, residential apartment ,adjacent to Government Bus stand,Baramunda.  Bivab Estate, residential duplexes, adjacent to OUAT, Siripur, Baramunda.  Bivab Gulmohar residential & Commercial apartment ,in front of NABARD, Nayapalli.
+                    </p>
                     <a href="cprojectdetail.html" class="more">Read More</a>
                 </div>
                 <div class="clearfix"> </div>
@@ -407,30 +358,26 @@
         <div class="container">
             <div class="title1">
                 <h3>Feature Projects</h3>
-                <p>Duis euismod massa ut sem fringilla blandit. Proin vel enim nec ipsum finibus. </p>
             </div>
             <div class="w3ls-row1">
                 <div class="col-sm-4 col-md-4  w3latest-grids">
-                    <img src="images/upcominggt1.png" class="img-responsive" alt="" />
+                    <img src="images/ongoing6.png" class="img-responsive" style="height:240px" alt="" />
                     <div class="w3latest-grids-text">
-                        <h4>Proin vel enim nec ipsum </h4>
-                        <p>Sed tincidunt nec ipsum</p>
+                        <h4>Aangan</h4>
                         <a href="upcomingproject.html" class="more">Read More</a>
                     </div>
                 </div>
                 <div class="col-sm-4 col-md-4  w3latest-grids">
-                    <img src="images/upcominggt2.png" class="img-responsive" alt="" />
+                    <img src="images/heritage.jpg" class="img-responsive" style="height:240px" alt="" />
                     <div class="w3latest-grids-text">
-                        <h4>Proin vel enim nec ipsum </h4>
-                        <p>Sed tincidunt nec ipsum</p>
+                        <h4>Heritage </h4>
                         <a href="upcomingproject.html" class="more">Read More</a>
                     </div>
                 </div>
                 <div class="col-sm-4 col-md-4  w3latest-grids">
                     <img src="images/upcominggt3.png" class="img-responsive" alt="" />
                     <div class="w3latest-grids-text">
-                        <h4>Proin vel enim nec ipsum </h4>
-                        <p>Sed tincidunt nec ipsum</p>
+                        <h4>Golden Triangle</h4>
                         <a href="upcomingproject.html" class="more">Read More</a>
                     </div>
                 </div>
@@ -438,120 +385,6 @@
             </div>
         </div>
     </div>
-    <!-- //welcome -->
-    <!-- slid -->
-    <!--<div class="slid">
-        <div class="container">
-            <section class="slider">
-                <div class="flexslider">
-                    <ul class="slides">
-                        <li>
-                            <div class="slid-text">
-                                <h4>SOME WORDS ABOUT US</h4>
-                                <p>Proin tincidunt sodales faucibus. Curabitur ut metus sed urna dignissim sodales ac a tellus. Sed varius justo tellus, at convallis libero cursus non. In malesuada accumsan felis, a imperdiet arcu blandit sed. Ut id faucibus eros. Fusce sed vulputate dui, non consectetur felis. Etiam id enim sem. Suspendisse commodo tempor magna </p>
-                                <a href="about.html" class="more">More About</a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="slid-text">
-                                <h4>PEOPLE SAY ABOUT</h4>
-                                <img src="images/t1.jpg" alt=""/>
-                                <p>"Proin tincidunt sodales faucibus. Curabitur ut metus sed urna dignissim sodales ac a tellus. Sed varius justo tellus, at convallis libero cursus non. In malesuada accumsan felis, a imperdiet arcu blandit sed. Ut id faucibus eros. Suspendisse commodo tempor magna" </p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="slid-text">
-                                <h4>PEOPLE SAY ABOUT</h4>
-                                <img src="images/t2.jpg" alt=""/>
-                                <p>"Proin tincidunt sodales faucibus. Curabitur ut metus sed urna dignissim sodales ac a tellus. Sed varius justo tellus, at convallis libero cursus non. In malesuada accumsan felis, a imperdiet arcu blandit sed. Ut id faucibus eros. Suspendisse commodo tempor magna" </p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </section>-->
-    <!-- FlexSlider -->
-    <!--<script defer src="js/jquery.flexslider.js"></script>
-    <script type="text/javascript">
-    $(window).load(function() {
-      $('.flexslider').flexslider({
-        animation: "slide",
-        controlsContainer: $(".custom-controls-container"),
-        customDirectionNav: $(".custom-navigation a")
-      });
-    });
-    </script>-->
-    <!-- //FlexSlider -->
-    <!--</div>
-    </div>-->
-    <!-- //slid -->
-    <!-- latest -->
-    <!--team-->
-    <!--<div class="team">
-        <div class="container">
-            <div class="title">
-                <h3>Testimonial</h3>
-                <p>Duis euismod massa ut sem fringilla blandit. Proin vel enim nec ipsum finibus. </p>
-            </div>
-            <div class="team-grids">
-                <ul class="ch-grid">
-                    <li class="ch-grid-item">
-                        <div class="ch-item ch-img-1">
-                            <div class="ch-info">
-                                <h3>Designer</h3>
-                                <p>by Daniel Nyari</p>
-                                <ul class="social-icons">
-                                    <li><a href="#"> </a></li>
-                                    <li><a href="#" class="fb"> </a></li>
-                                    <li><a href="#" class="in"> </a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="ch-grid-item">
-                        <div class="ch-item ch-img-2">
-                            <div class="ch-info">
-                                <h3>Designer</h3>
-                                <p>by Johnathen</p>
-                                <ul class="social-icons">
-                                    <li><a href="#"> </a></li>
-                                    <li><a href="#" class="fb"> </a></li>
-                                    <li><a href="#" class="in"> </a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="ch-grid-item">
-                        <div class="ch-item ch-img-3">
-                            <div class="ch-info">
-                                <h3>Designer</h3>
-                                <p>by Fedrick Paul</p>
-                                <ul class="social-icons">
-                                    <li><a href="#"> </a></li>
-                                    <li><a href="#" class="fb"> </a></li>
-                                    <li><a href="#" class="in"> </a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="ch-grid-item">
-                        <div class="ch-item ch-img-4">
-                            <div class="ch-info">
-                                <h3>Designer</h3>
-                                <p>by Stellawil vari</p>
-                                <ul class="social-icons">
-                                    <li><a href="#"> </a></li>
-                                    <li><a href="#" class="fb"> </a></li>
-                                    <li><a href="#" class="in"> </a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-                <div class="clearfix"> </div>
-            </div>
-        </div>
-    </div>-->
-    <!--//team-->
     <div class="latest">
         <div class="container">
             <div class="title1">
@@ -675,7 +508,7 @@
                     <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="codes.html">Short Codes</a></li>
+                    <li><a href="toolemi.html">EMI Tools</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
@@ -683,9 +516,12 @@
                 <div class="col-md-4 footer-grids footer-address">
                     <h3>Contact Us :</h3>
                     <ul>
-                        <li><i class="glyphicon glyphicon-send"></i> Bivab House, Bivav Estate, <span>  Baramunda, </span></li>
-                        <li><i class="glyphicon glyphicon-phone"></i> 9437191427 / 9937184695 / 94375 67628 / 94371 91427</li>
-                        <li><i class="glyphicon glyphicon-envelope"></i><a href="mailto:biranchi@bivabdevelopers.com">biranchi@bivabdevelopers.com</a></li>
+                        <li> 4TH FLOOR</li>
+                        <li>BIVAB GULMOHAR COMMERCIAL</li>
+                        <li>NAYAPALLI,</li>
+                        <li>BHUBANESWAR-751012,<span>ODISHA.</span></li>
+                        <li><i class="glyphicon glyphicon-phone"></i>  9937184695 / 9337303107.</li>
+                        <li><i class="glyphicon glyphicon-envelope"></i><a href="info@bivabdevelopers.com">info@bivabdevelopers.com</a></li>
                         <li><i class="glyphicon glyphicon-home"></i><a href="www.bivabdevelopers.com">www.bivabdevelopers.com </a></li>
                     </ul>
                 </div>
@@ -710,7 +546,7 @@
                 <div class="clearfix"> </div>
             </div>
             <div class="footer-bottom">
-                
+
             </div>
         </div>
     </div>

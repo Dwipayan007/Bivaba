@@ -1,10 +1,4 @@
-﻿<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <title>Bivaba Developers Pvt Ltd.</title>
@@ -24,6 +18,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- //Custom Theme files -->
     <!-- js -->
     <script src="../js/jquery-1.11.1.min.js"></script>
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>-->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
     <!-- //js -->
     <!-- web-fonts -->
     <link href='//fonts.googleapis.com/css?family=Buda:300' rel='stylesheet' type='text/css'>
@@ -94,6 +91,46 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 $('.navbar-blue .navbar-collapse').not(this).collapse('hide');
             });
         });
+        // Javascript to enable link to tab
+        var hash = document.location.hash;
+        if (hash) {
+            if (hash == '#company') {
+                $('.tab-pane .fade').addClass('in active')
+            }
+            else if (hash == '#home') {
+                $('.tab-pane .fade').addClass('in active')
+            }
+            else if (hash == '#carl') {
+                $('#myTabContent .tab-pane .fade').addClass('in active')
+            }
+            else if (hash == '#strength') {
+                $('.tab-pane .fade').addClass('in active')
+            }
+            else if (hash == '#founder') {
+                $('.tab-pane .fade').addClass('in active')
+            }
+            else {
+                $('.tab-pane .fade').removeClass('in active')
+            }
+
+        }
+
+        //// Change hash for page-reload
+        //$('.bs-example-tabs a').on('shown.bs.tab', function (e) {
+        //    window.location.hash = e.target.hash;
+        //});
+
+        $(".dropdown").hover(function () {
+            debugger;
+            $('.dropdown-menu', this).stop(true, true).fadeIn("fast");
+            $(this).toggleClass('open');
+            $('b', this).toggleClass("caret caret-up");
+        }, function () {
+            $('.dropdown-menu', this).stop(true, true).fadeOut("fast");
+            $(this).toggleClass('open');
+            $('b', this).toggleClass("caret caret-up");
+        });
+
 
     </script>
     <!-- //end-smooth-scrolling -->
@@ -157,21 +194,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
                 <!-- User menu to show on screens < 768px -->
                 <div class="collapse navbar-collapse navbar-default" id="navbar-collapse-2">
-                    <script>
-                        $(function () {
-                            $(".dropdown").hover(
-                                    function () {
-                                        $('.dropdown-menu', this).stop(true, true).fadeIn("fast");
-                                        $(this).toggleClass('open');
-                                        $('b', this).toggleClass("caret caret-up");
-                                    },
-                                    function () {
-                                        $('.dropdown-menu', this).stop(true, true).fadeOut("fast");
-                                        $(this).toggleClass('open');
-                                        $('b', this).toggleClass("caret caret-up");
-                                    });
-                        });
-                    </script>
+
                     <ul class="nav navbar-nav client-nav navbar-left">
                         <li class="active">
                             <a href="index.html">
@@ -182,19 +205,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             </a>
                         </li>
                         <li class="dropdown ">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <a href="companyprofile.html" class="dropdown-toggle" data-toggle="dropdown">
                                 <span class="icon">
                                     <i aria-hidden="true" class="icon-services glyphicon glyphicon-info-sign"></i>
                                 </span>
-                                <span>About</span>
-                                <span class="caret"></span>
+                                <span> About</span>
                             </a>
-                            <ul role="menu" class="dropdown-menu" aria-labelledby="drop1">
+                            <!--ul role="menu" class="dropdown-menu" aria-labelledby="drop1">
                                 <li><a href="companyprofile.html" data-id="myTabContent" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Company Profile</a></li>
                                 <li><a href="companyprofile.html" data-id="carl" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>EHS Policy</a></li>
                                 <li><a href="companyprofile.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Our Strength </a></li>
                                 <li><a href="companyprofile.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Founder Credentials </a></li>
-                            </ul>
+                            </ul>-->
                         </li>
                         <li class="dropdown ">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -205,9 +227,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu animated flipInX" role="menu">
-                                <li><a href="projects.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>On-Going Project</a></li>
-                                <li><a href="projects.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Up-Coming Project</a></li>
-                                <li><a href="projects.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Completed Project  </a></li>
+                                <li><a href="ongoing.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>On-Going Project</a></li>
+                                <li><a href="upcoming.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Up-Coming Project</a></li>
+                                <li><a href="completed.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Completed Project  </a></li>
                             </ul>
                         </li>
                         <!--<li class="dropdown ">
@@ -231,7 +253,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu animated flipInX" role="menu">
-                                <li><a href="bivabaangan.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Bivab Aangan</a></li>
+                                <li><a href="bivabaangan.html" class="dropdown"><i class="icon-home glyphicon glyphicon-home"> </i>Bivab Gulmohar</a></li>
                             </ul>
                         </li>
                         <li class="dropdown ">
@@ -239,7 +261,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <span class="icon">
                                     <i aria-hidden="true" class="icon-team glyphicon glyphicon-check"></i>
                                 </span>
-                                <span>Tools</span>
+                                <span>EMI Tools</span>
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu animated flipInX" role="menu">
@@ -249,7 +271,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             </ul>
                         </li>
                         <li class="dropdown ">
-                            <a href="index.html">
+                            <a href="contact.html">
                                 <span class="icon">
                                     <i aria-hidden="true" class="icon-contact glyphicon glyphicon-envelope"></i>
                                 </span>
@@ -267,6 +289,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     ( 10.30 AM - 6.30 PM     MON - SUN )
                 </p>
             </div>-->
+            <!-- I was motivated to create this after seeing BhaumikPatel's http://bootsnipp.com/snippets/featured/accordion-menu; I adapted it to a list format rather than a table so that it would be easy to create a nav toggle button when viewed on mobile devices -->
         </div>
     </nav>
     <!-- /.navbar-collapse -->
@@ -275,28 +298,71 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!--about-->
     <div class="about">
         <div class="container">
-            <div class="title">
-                <h3>Company Profile</h3>
-            </div>
-            <div class="about-w3ls-row">
-                <div class="col-md-4 about-left">
-                    <img src="images/img5.jpg" class="img-responsive" alt="" />
+            <div class="col-md-4">
+                <div id="sidenav1">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#sideNavbar"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="sideNavbar">
+                        <div class="panel-group" id="accordion">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h6 class="panel-title"><a href="#company" id="home-tab" role="tab" data-toggle="tab" aria-controls="company" aria-expanded="true"><span class="glyphicon glyphicon-home"></span>Company Profile</a> </h6>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h6 class="panel-title"><a href="#COMPANYPOLICY" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true"><span class="glyphicon glyphicon-home"></span>Company Quality Policy</a> </h6>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h6 class="panel-title"> <a href="#carl" role="tab" id="carl-tab" data-toggle="tab" aria-controls="carl"><span class="glyphicon glyphicon-book"> </span>Company EHS Policy</a> </h6>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h6 class="panel-title"> <a href="#ADVANTAGE" role="tab" id="carl-tab" data-toggle="tab" aria-controls="carl"><span class="glyphicon glyphicon-book"> </span>Advantage At Bivab</a> </h6>
+                                </div>
+                            </div>
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h6 class="panel-title"><a href="#FOUNDERCREDENTIALS" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true"><span class="glyphicon glyphicon-home"></span> Founder Credentials</a> </h6>
+                                </div>
+                            </div>
+                            <!--<div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h6 class="panel-title"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true"><span class="glyphicon glyphicon-home"></span>Our Goal</a> </h6>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h6 class="panel-title"> <a href="#strength" role="tab" id="strength-tab" data-toggle="tab" aria-controls="strength"><span class="glyphicon glyphicon-cog"> </span>Strength</a> </h6>
+                                </div>
+                            </div>-->
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h6 class="panel-title"> <a href="#founder" role="tab" id="founder-tab" data-toggle="tab" aria-controls="founder"><span class="glyphicon glyphicon-calendar"> </span>Founder</a> </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+
+            <div class="about-w3ls-row">
+
                 <div class="col-md-8 about-right">
-                    <p>In the span of last 16 years Bivab developers pvt. Ltd. has been emerged as number one choice in Odisha for its finest products for it's several completed projects in strategic locations with timely delivery ,quality construction & state of the art architecture.</p>
                     <div class="about-agile-row">
                         <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
-
-                            <ul id="myTab" class=" nav-tabs" role="tablist">
-                                <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Our Goal</a></li>
-                                <li role="presentation"><a href="#carl" role="tab" id="carl-tab" data-toggle="tab" aria-controls="carl"> EHS Policy</a></li>
-                                <li role="presentation"><a href="#strength" role="tab" id="strength-tab" data-toggle="tab" aria-controls="strength">Strength</a></li>
-                                <li role="presentation"><a href="#founder" role="tab" id="founder-tab" data-toggle="tab" aria-controls="founder">Founder</a></li>
-                            </ul>
                             <div class="clearfix"> </div>
                             <div id="myTabContent" class="tab-content">
-                                <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+                                <div role="tabpanel" class="tab-pane fade" id="home" aria-labelledby="home-tab">
                                     <div class="tabcontent-grids">
+                                        <div class="title">
+                                            <h3>Our Goal</h3>
+                                        </div>
                                         <h2>Some of those stands high with immense satisfaction of its occupants are:-</h2>
                                         <p>Individuality in structural designs and architecture that are oceans apart from the ordinary is the motto of Bivab Developers. Bivab Developers will endure time and tide to stand testimony to the customers imagination and creativity.</p>
                                         <ul>
@@ -306,285 +372,472 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                         </ul>
                                     </div>
                                 </div>
-                                <div role="tabpanel" class="tab-pane fade" id="carl" aria-labelledby="carl-tab">
+                                <div role="tabpanel" class="tab-pane fade" id="ADVANTAGE" aria-labelledby="home-tab">
                                     <div class="tabcontent-grids">
-                                        <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+                                        <div class="company-title">
+                                            <h3>Advantage At Bivab</h3>
+                                        </div>
+                                        <p>We at Bivab acutely conscious of the fact that due to rapid urbanization, there are huge challenges and as responsible real estate player we shall continue to provide intelligent solutions in a manner which is sustainable. We rely on our people, their capacities to innovate and use of technology to create immense value for all our stakeholders. We will continue to raise the bar and set new standards in the industry to strengthen the following goal of ours -</p>
+                                        <div>
+                                            <h4>Integrity</h4>
+                                            <p>When we make a commitment, we make sure that we deliver on it – with integrity, sincerity and consistency.</p>
+                                        </div>
+                                        <div>
+                                            <h4>Ethical Practices</h4>
+                                            <p>Ethics constitute an integral part of our everyday functioning. We strive to maintain transparency in all procurement and delivery transaction by adhering to time-honored ethical practices.</p>
+                                        </div>
+                                        <div>
+                                            <h4>Respect for People</h4>
+                                            <p>Respect comprises the bedrock of all our relationships. We value each of our customers, shareholders, partners and employees, and work on an ongoing basis to strengthen the bond of mutual respect.</p>
+                                        </div>
+                                        <div>
+                                            <h4>Customer Focused</h4>
+                                            <p>
+                                                The customer lies at the core of our business. We strive to evoke customer delight by exceeding customer expectations at every stage of the project.
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <h4>Community Centric</h4>
+                                            <p>It is our constant endeavor to transform the communities we serve into better places to live, work and raise families.</p>
+                                        </div>
+                                        <div>
+                                            <p>As we peep into the future, we remain firmly committed towards creating urban living spaces where people can live, work and play smart.</p>
+                                        </div>
+                                        <!--<ul>
+                                            <li><span class="glyphicon glyphicon-menu-right"></span> Bivab Imperial Mansion, residential apartment ,adjacent to Government Bus stand, Baramunda. </li>
+                                            <li><span class="glyphicon glyphicon-menu-right"></span> Bivab Estate, residential duplexes, adjacent to OUAT, Siripur, Baramunda. </li>
+                                            <li><span class="glyphicon glyphicon-menu-right"></span>Bivab Gulmohar residential & Commercial apartment ,in front of NABARD, Nayapalli. </li>
+                                        </ul>-->
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="FOUNDERCREDENTIALS" aria-labelledby="home-tab">
+                                    <div class="row">
+                                        <div class="col-md-12" style="overflow-x:auto;">
                                             <div class="tabcontent-grids">
-                                                <h2>BIVAB DEVELOPERS</h2>
-                                                <p> believes in developing and constructing aesthetically designed, functionally efficient residential and commercial complexes of international quality, offering "more value for money". We believe our buildings should reflect engineering excellence with a view to providing complete customer satisfaction. It is our intention that the quality of our products and services should result in complete value for our clients, as well as foster continuous demand for our products. While rendering our construction services, we shall strive to make Environmental, Health and Safety (EHS) matters as an integral part of our business.</p>
-                                                <h3>As a responsible corporate citizen and employer, Bivab Developers commits itself to :</h3>
-                                                <ul>
-                                                    <li><span class="glyphicon glyphicon-menu-right"></span> Provide high quality construction at economical cost to customers, thereby gaining their confidence and satisfaction. </li>
-                                                    <li><span class="glyphicon glyphicon-menu-right"></span> Ensure Health and Safety of all its employees. </li>
-                                                    <li><span class="glyphicon glyphicon-menu-right"></span>Protect the environment against pollution. </li>
-                                                </ul>
+                                                <div class="company-title">
+                                                    <h3>Founder Credentials</h3>
+                                                </div>
+                                                <p>In the span of last 16 years Bivab Developers Pvt. Ltd. has been emerged as number one choice in Odisha for its finest products for its several completed projects in strategic locations with timely delivery ,quality construction & state of the art architecture.</p>
+                                                <h3>Some of those stands high with immense satisfaction of its occupants are:-</h3>
+                                                <h4 class="project-name">Bivab Estate- Independent Duplexes, Bunglows</h4>
+                                                <table class="table-bordered table-width ">
+                                                    <!--<thead>
+                                                        <tr>
+                                                            <th colspan="2">
+
+                                                            </th>
+                                                        </tr>
+                                                    </thead>-->
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <b>Location:</b>
+                                                            </td>
+                                                            <td colspan="2">
+                                                                <b>Adjacent to OUAT, Siripur, Baramunda.</b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <b>Project Land Area:</b>
+                                                            </td>
+                                                            <td>
+                                                                <b></b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <b>Number of Units:</b>
+                                                            </td>
+                                                            <td>
+                                                                <b>71</b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <b>Project initiated:</b>
+                                                            </td>
+                                                            <td>
+                                                                <b>2000</b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <b>Project completed:</b>
+                                                            </td>
+                                                            <td>
+                                                                <b>2008</b>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+
+                                                <h4 class="project-name">Bivab Imperial Mansion - Residential apartment </h4>
+                                                <table class="table-bordered table-width ">
+                                                    <!--<thead>
+            <tr>
+                <th colspan="2">
+
+                </th>
+            </tr>
+        </thead>-->
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <b>Location:</b>
+                                                            </td>
+                                                            <td colspan="2">
+                                                                <b>Adjacent to Government Bus Stand, Baramunda.</b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <b>Project Land Area:</b>
+                                                            </td>
+                                                            <td>
+                                                                <b>0.5 ACRE</b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <b>Number of Units:</b>
+                                                            </td>
+                                                            <td>
+                                                                <b>50</b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <b>Project initiated:</b>
+                                                            </td>
+                                                            <td>
+                                                                <b>1997</b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <b>Project completed:</b>
+                                                            </td>
+                                                            <td>
+                                                                <b>1999</b>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <h4 class="project-name">Bivab Gulmohar - Residential Cum Commercial  </h4>
+                                                <table class="table-bordered table-width ">
+                                                    <!--<thead>
+            <tr>
+                <th colspan="2">
+
+                </th>
+            </tr>
+        </thead>-->
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <b>Location:</b>
+                                                            </td>
+                                                            <td colspan="2">
+                                                                <b>In front of NABARD, Nayapalli.</b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <b>Project Land Area:</b>
+                                                            </td>
+                                                            <td>
+                                                                <b>1 Acre</b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <b>Constructed Area:</b>
+                                                            </td>
+                                                            <td>
+                                                                <b>1,000,00  Sq.Ft.</b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <b>Number of Units:</b>
+                                                            </td>
+                                                            <td colspan="2">
+                                                                <b>Residential-Commercial- 12 Units</b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <b>Project initiated:</b>
+                                                            </td>
+                                                            <td>
+                                                                <b>2009</b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <b>Project completed:</b>
+                                                            </td>
+                                                            <td>
+                                                                <b>2012</b>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+
+                                                <h4 class="project-name">Bivab Aangan - Residential apartment </h4>
+                                                <table class="table-bordered table-width ">
+                                                    <!--<thead>
+                                                        <tr>
+                                                            <th colspan="2">
+
+                                                            </th>
+                                                        </tr>
+                                                    </thead>-->
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <b>Location:</b>
+                                                            </td>
+                                                            <td colspan="2">
+                                                                <b>Madanpur, Near GITA Engineering College</b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <b>Project Land Area:</b>
+                                                            </td>
+                                                            <td>
+                                                                <b>1 Acre</b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <b>Constructed Area:</b>
+                                                            </td>
+                                                            <td>
+                                                                <b></b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <b>Number of Units:</b>
+                                                            </td>
+                                                            <td>
+                                                                <b>84</b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <b>Project initiated:</b>
+                                                            </td>
+                                                            <td>
+                                                                <b>2013</b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <b>Expected Project completion Year:</b>
+                                                            </td>
+                                                            <td>
+                                                                <b>2017</b>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                               
+
+                                               
+
+                                                <h4 class="project-name">Bivab Heritage - Residential apartment </h4>
+                                                <table class="table-bordered table-width ">
+                                                    <!--<thead>
+                                                        <tr>
+                                                            <th colspan="2">
+
+                                                            </th>
+                                                        </tr>
+                                                    </thead>-->
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <b>Location:</b>
+                                                            </td>
+                                                            <td colspan="2">
+                                                                <b>Kapilprasad, Near Bhubaneswar International Airport</b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <b>Project Land Area:</b>
+                                                            </td>
+                                                            <td>
+                                                                <b>0.5 Acre</b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <b>Constructed Area:</b>
+                                                            </td>
+                                                            <td>
+                                                                <b></b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <b>Number of Units:</b>
+                                                            </td>
+                                                            <td>
+                                                                <b>40</b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <b>Project initiated:</b>
+                                                            </td>
+                                                            <td>
+                                                                <b>Mid 2016</b>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+
+                                                <h4 class="project-name">Bivab Golden Triangle -Residential Apartment Cum Commercial – Mall & Hotel.</h4>
+                                                <table class="table-bordered table-width ">
+                                                    <!--<thead>
+                                                        <tr>
+                                                            <th colspan="2">
+
+                                                            </th>
+                                                        </tr>
+                                                    </thead>-->
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <b>Location:</b>
+                                                            </td>
+                                                            <td colspan="2">
+                                                                <b>Utara, Near CIFA(Central Institute Of Freshwater Aquaculture)</b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <b>Project Land Area:</b>
+                                                            </td>
+                                                            <td>
+                                                                <b>9 Acre</b>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div role="tabpanel" class="tab-pane fade" id="strength" aria-labelledby="strength-tab">
+                                <div role="tabpanel" class="tab-pane fade in active" id="company" aria-labelledby="home-tab">
                                     <div class="tabcontent-grids">
-                                        <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
-                                            <div class="tabcontent-grids">
-                                                <h2>Strength</h2>
-                                                <p>The Trust of satisfied customers of the completed projects due to our value added services through sustained endeavour and their evaluation to the performance of Bivab Developers Pvt. Ltd. are among the real estate & developer's of Odisha is our strength to move forword.</p>
-                                                <h2>Mission</h2>
-                                                <p>To carry on business of Builders & Developers, Architects & project Management consultants in & out of Odisha.</p>
-                                                <h2>Support</h2>
-                                                <h3>OUR SUPPORT FOR PEACE OF MIND OF OUR CUSTOMER</h3>
-                                                <ul>
-                                                    <li><span class="glyphicon glyphicon-menu-right"></span> We provide the loans at the requirement of prospective customers from the leading financial institutions, tied up with the projects. </li>
-                                                    <li><span class="glyphicon glyphicon-menu-right"></span> Exclusive transportation facility is provided from the project sites to the city centers.</li>
-                                                    <li><span class="glyphicon glyphicon-menu-right"></span>We acknowledge the responsibilities of the society maintenance charge for ten years from the date of handing over of property for the peace of mind of our customers. </li>
-                                                </ul>
-                                                <h2>Company quality Policy</h2>
-                                                <h3>Bivab developers Pvt. Ltd. is committed to :</h3>
-                                                <ul>
-                                                    <li><span class="glyphicon glyphicon-menu-right"></span> "Produce eco friendly commercial and residential dwellings of excellence to total customer satisfaction." </li>
-                                                    <li><span class="glyphicon glyphicon-menu-right"></span> "Continually improve the effectiveness of Quality Management System."</li>
-                                                    <li><span class="glyphicon glyphicon-menu-right"></span>"To deliver projects built on world class values - On time - Every time."</li>
-                                                    <li><span class="glyphicon glyphicon-menu-right"></span>"To build relationships forever with Customers on the solid foundation of Trust." </li>
-                                                </ul>
-                                            </div>
+                                        <div class="company-title">
+                                            <h3>Company Profile</h3>
                                         </div>
+                                        <p>In the span of last 16 years Bivab developers pvt. Ltd. has been emerged as number one choice in Odisha for its finest products for it's several completed projects in strategic locations with timely delivery ,quality construction & state of the art architecture.</p>
+                                        <h2>Some of those stands high with immense satisfaction of its occupants are:-</h2>
+                                        <ul>
+                                            <li><span class="glyphicon glyphicon-menu-right"></span>Bivab Imperial Mansion, residential apartment ,adjacent to Government Bus stand,Baramunda.</li>
+                                            <li><span class="glyphicon glyphicon-menu-right"></span>Bivab Estate, residential duplexes, adjacent to OUAT, Siripur, Baramunda.</li>
+                                            <li><span class="glyphicon glyphicon-menu-right"></span>Bivab Gulmohar residential & Commercial apartment ,in front of NABARD, Nayapalli.</li>
+                                        </ul>
+                                        <div>
+                                            <h4 class="h4padding-top">OUR STRENGTH</h4>
+                                            <p>The Trust of satisfied customers of the completed projects due to our value added services through sustained endeavour and their evaluation to the performance of Bivab Developers Pvt. Ltd. are among the real estate & developer’s of Odisha is our strength to move forword.</p>
+                                        </div>
+                                        <div>
+                                            <h4 class="h4padding-top">MISSION</h4>
+                                            <p>
+                                                To carry on business of Builders & Developers, Architects & project Management consultants in & out of Odisha
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <h4 class="h4padding-top">SUPPORT</h4>
+                                            <h2>OUR SUPPORT FOR PEACE OF MIND OF OUR CUSTOMER</h2>
+                                            <ul>
+                                                <li><span class="glyphicon glyphicon-menu-right"></span>We provide the loans at the requirement of prospective customers from the leading financial institutions, tied up with the projects.</li>
+                                                <li><span class="glyphicon glyphicon-menu-right"></span>Exclusive transportation facility is provided from the project sites to the city centers.</li>
+                                                <li><span class="glyphicon glyphicon-menu-right"></span>We acknowledge the responsibilities of the society maintenance charge for ten years from the date of handing over of property for the peace of mind of our customers.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="COMPANYPOLICY" aria-labelledby="carl-tab">
+                                    <div class="tabcontent-grids">
+                                        <div class="company-title">
+                                            <h3>Company Quality Policy</h3>
+                                        </div>
+                                        <h2>Bivab developers Pvt. Ltd. is committed to:</h2>
+                                        <ul>
+                                            <li><span class="glyphicon glyphicon-menu-right"></span> "Produce eco friendly commercial and residential dwellings of excellence to total customer satisfaction."</li>
+                                            <li><span class="glyphicon glyphicon-menu-right"></span> "Continually improve the effectiveness of Quality Management System."</li>
+                                            <li><span class="glyphicon glyphicon-menu-right"></span>"To deliver projects built on world class values - On time - Every time." </li>
+                                            <li><span class="glyphicon glyphicon-menu-right"></span>"To build relationships forever with Customers on the solid foundation of Trust." </li>
+                                        </ul>
+                                        <div class="row text-float-right">
+                                            <p style="font-weight: 900;margin-bottom: -6px;">Mr. Binay Krishna Das</p>
+                                            <p style="font-weight: 900;margin-bottom: -6px;">Chairman and Managing Director</p>
+                                            <p style="font-weight: 900;margin-bottom: -6px;">Bivab Developers Pvt. Ltd., Bhubaneswar</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="carl" aria-labelledby="carl-tab">
+                                    <div class="tabcontent-grids">
+                                        <div class="company-title">
+                                            <h3>Company EHS Policy</h3>
+                                        </div>
+                                        <p> <b>BIVAB DEVELOPERS</b> believes in developing and constructing aesthetically designed, functionally efficient residential and commercial complexes of international quality, offering "more value for money". We believe our buildings should reflect engineering excellence with a view to providing complete customer satisfaction. It is our intention that the quality of our products and services should result in complete value for our clients, as well as foster continuous demand for our products. While rendering our construction services, we shall strive to make Environmental, Health and Safety (EHS) matters as an integral part of our business.</p>
+                                        <h3>As a responsible corporate citizen and employer, Bivab Developers commits itself to :</h3>
+                                        <ul>
+                                            <li><span class="glyphicon glyphicon-menu-right"></span> Provide high quality construction at economical cost to customers, thereby gaining their confidence and satisfaction. </li>
+                                            <li><span class="glyphicon glyphicon-menu-right"></span> Ensure Health and Safety of all its employees. </li>
+                                            <li><span class="glyphicon glyphicon-menu-right"></span>Protect the environment against pollution. </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="strength" aria-labelledby="strength-tab">
+
+                                    <div class="tabcontent-grids">
+                                        <div class="company-title">
+                                            <h3>Strength</h3>
+                                        </div>
+                                        <p>The Trust of satisfied customers of the completed projects due to our value added services through sustained endeavour and their evaluation to the performance of Bivab Developers Pvt. Ltd. are among the real estate & developer's of Odisha is our strength to move forword.</p>
+                                        <h2>Mission</h2>
+                                        <p>To carry on business of Builders & Developers, Architects & project Management consultants in & out of Odisha.</p>
+                                        <h2>Support</h2>
+                                        <h3>OUR SUPPORT FOR PEACE OF MIND OF OUR CUSTOMER</h3>
+                                        <ul>
+                                            <li><span class="glyphicon glyphicon-menu-right"></span> We provide the loans at the requirement of prospective customers from the leading financial institutions, tied up with the projects. </li>
+                                            <li><span class="glyphicon glyphicon-menu-right"></span> Exclusive transportation facility is provided from the project sites to the city centers.</li>
+                                            <li><span class="glyphicon glyphicon-menu-right"></span>We acknowledge the responsibilities of the society maintenance charge for ten years from the date of handing over of property for the peace of mind of our customers. </li>
+                                        </ul>
+                                        <h2>Company quality Policy</h2>
+                                        <h3>Bivab developers Pvt. Ltd. is committed to :</h3>
+                                        <ul>
+                                            <li><span class="glyphicon glyphicon-menu-right"></span> "Produce eco friendly commercial and residential dwellings of excellence to total customer satisfaction." </li>
+                                            <li><span class="glyphicon glyphicon-menu-right"></span> "Continually improve the effectiveness of Quality Management System."</li>
+                                            <li><span class="glyphicon glyphicon-menu-right"></span>"To deliver projects built on world class values - On time - Every time."</li>
+                                            <li><span class="glyphicon glyphicon-menu-right"></span>"To build relationships forever with Customers on the solid foundation of Trust." </li>
+                                        </ul>
                                     </div>
                                 </div>
                                 <div role="tabpanel" class="tab-pane fade" id="founder" aria-labelledby="founder-tab">
                                     <div class="tabcontent-grids">
-                                        <h2>Founder</h2>
-                                        <h3>Er. Binay Krishna Das – Profile</h3>
-                                        <p>
-                                            Er. Binay Krishna Das is the Chairman and Managing Director of Bivab Developers Private Ltd, one of Odisha's fastest growing property development companies. Under his steward leadership, the company has completed 17 glorious years and has built world class residential properties and Office buildings. A business leader with a clear vision for the industry.
-
-                                            Mr. Das was the President of the Odisha chapter of the Confederation of Real Estate Developers' Associations of India (CREDAI).
-
-                                            At the core of Mr. Das endeavour is his credo of PQRST (Punctuality, Quality, Reliability, Speed and Transparency). This value framework places the customer at the heart of every project and indeed every activity. Through this, Mr. Das has succeeded in infusing a degree of professionalism hitherto unseen in the realty sector. Mr. Das's new age thinking has enabled Bivab Developers to be the leaders in adopting green technology and environmentally sustainable building practices. Mr. Das has demonstrated the power of his vision and the strength of his values. No wonder he stands as a colossal figure in industry circles, inspiring others with his quest for newer and greater heights
-                                        </p>
-                                        <h2>Founder Credentials</h2>
-                                        <div class="col-md-12 col-sm-12">
-                                            <table class="col-md-6 col-sm-6">
-                                                <thead>
-                                                    <tr>
-                                                        <th colspan="2">Bivab Imperial Mansion - Residential apartment</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Location</td>
-                                                        <td>
-                                                            : Adjacent to Government Bus Stand, Baramunda.
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Project Land Area</td>
-                                                        <td>: 0.5 ACRE</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Number of Units</td>
-                                                        <td>: 50</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Project initiated</td>
-                                                        <td>: 1997</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Project completed</td>
-                                                        <td>: 1999</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-
-
-                                            <table class="col-md-6 col-sm-6">
-                                                <thead>
-                                                    <tr>
-                                                        <th colspan="2">Bivab Estate- Independent Duplexes, Bunglows</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Location</td>
-                                                        <td>
-                                                            : Adjacent to OUAT, Siripur, Baramunda.
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Project Land Area</td>
-                                                        <td>: 7 Acres</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Number of Units</td>
-                                                        <td>: 71</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Project initiated</td>
-                                                        <td>
-                                                            : 2000
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Project completed</td>
-                                                        <td>: 2008</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-
-                                            <table class="col-md-6 col-sm-6">
-                                                <thead>
-                                                    <tr>
-                                                        <th colspan="2">Bivab Estate- Independent Duplexes, Bunglows</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Location</td>
-                                                        <td>
-                                                            : In front of NABARD, Nayapalli.
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Project Land Area</td>
-                                                        <td>: 1 Acre</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            Constructed Area
-
-                                                        </td>
-                                                        <td>
-                                                            : 1,00,000 Sq.Ft.
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Number of Units</td>
-                                                        <td>: 71</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Project initiated</td>
-                                                        <td>
-                                                            : 2000
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Project completed</td>
-                                                        <td>: 2008</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <div class="clearfix"></div> <br>
-                                            <p class="col-md-6 col-sm-6"><strong>ONGOING PROJECT:</strong></p>
-                                            <p class="col-md-6 col-sm-4=6"><strong>UP-COMING PROJECT:</strong></p>
-                                            <div class="clearfix"></div>
-                                            <table class="col-md-6 col-sm-6">
-                                                <thead>
-                                                    <tr>
-                                                        <th colspan="2">Bivab Imperial Mansion - Residential apartment</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Location</td>
-                                                        <td>
-                                                            : Bivab Aangan - Residential apartment
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Project Land Area</td>
-                                                        <td>: 1 ACRE</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Number of Units</td>
-                                                        <td>: 84</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            Constructed Area
-
-                                                        </td>
-                                                        <td>: 1,00,000 Sqft</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Project initiated</td>
-                                                        <td>: 2013</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Project completed</td>
-                                                        <td>: 2013</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-
-
-                                            <table class="col-md-6 col-sm-6">
-                                                <thead>
-                                                    <tr>
-                                                        <th colspan="2">Bivab Heritage - Residential apartment</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Location</td>
-                                                        <td>
-                                                            :  Kapilprasad, Near Bhubaneswar International Airport
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            Project Land Area
-                                                        </td>
-                                                        <td>: 0.5 Acre</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            Constructed Area
-                                                        </td>
-                                                        <td>: 50,000 Sqft</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            Number of Units
-                                                        </td>
-                                                        <td>: 36</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            Expected Project initiation Year
-
-                                                        </td>
-                                                        <td>: 2015</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <div class="clearfix"></div>
-                                            <table class="col-md-6 col-sm-6">
-                                                <thead>
-                                                    <tr>
-                                                        <th colspan="2">Bivab Golden Triangle - Residential Apartment Cum Commercial – Mall &amp; Hotel.</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-
-                                                    <tr>
-                                                        <td>
-                                                            Location
-
-
-                                                        </td>
-                                                        <td>: Pubasasan(Near KEC), CIFA, Bhubaneswar-2</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            Project Land Area
-
-
-                                                        </td>
-                                                        <td>: 9 Acre</td>
-                                                    </tr>
-
-
-                                                </tbody>
-                                            </table>
+                                        <div class="company-title">
+                                            <h3>Founder</h3>
                                         </div>
+                                        <h4>Er. Binay Krishna Das – Profile</h4>
+                                        <p>
+                                            <strong> Er. Binay Krishna Das</strong> is the Chairman and Managing Director of Bivab Developers Private Ltd, one of Odisha's fastest growing property development companies. Under his steward leadership, the company has completed 17 glorious years and has built world class residential properties and Office buildings. A business leader with a clear vision for the industry.
+
+                                            <strong>Mr. Das </strong> was the President of the Odisha chapter of the Confederation of Real Estate Developers' Associations of India (CREDAI).
+                                        </p>
+                                        <p>At the core of <strong>Mr. Das </strong> endeavour is his credo of PQRST (Punctuality, Quality, Reliability, Speed and Transparency). This value framework places the customer at the heart of every project and indeed every activity. Through this, Mr. Das has succeeded in infusing a degree of professionalism hitherto unseen in the realty sector. Mr. Das’s new age thinking has enabled Bivab Developers to be the leaders in adopting green technology and environmentally sustainable building practices. Mr. Das has demonstrated the power of his vision and the strength of his values. No wonder he stands as a colossal figure in industry circles, inspiring others with his quest for newer and greater heights</p>
                                     </div>
                                 </div>
                             </div>
@@ -597,78 +850,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </div>
     <!--//about-->
     <!-- slid -->
-    <div class="slid about-w3ls-slid">
-        <div class="container">
-            <h3>Fusce sed vulputate dui, non consectetur felis, Etiam id enim sem Suspendisse commodo tempor magna </h3>
-        </div>
-    </div>
     <!-- //slid -->
     <!--team-->
-    <div class="team">
-        <div class="container">
-            <div class="title">
-                <h3>Meet Our Team</h3>
-                <p>Duis euismod massa ut sem fringilla blandit. Proin vel enim nec ipsum finibus. </p>
-            </div>
-            <div class="team-grids">
-                <ul class="ch-grid">
-                    <li class="ch-grid-item">
-                        <div class="ch-item ch-img-1">
-                            <div class="ch-info">
-                                <h3>Designer</h3>
-                                <p>by Daniel Nyari</p>
-                                <ul class="social-icons">
-                                    <li><a href="#"> </a></li>
-                                    <li><a href="#" class="fb"> </a></li>
-                                    <li><a href="#" class="in"> </a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="ch-grid-item">
-                        <div class="ch-item ch-img-2">
-                            <div class="ch-info">
-                                <h3>Designer</h3>
-                                <p>by Johnathen</p>
-                                <ul class="social-icons">
-                                    <li><a href="#"> </a></li>
-                                    <li><a href="#" class="fb"> </a></li>
-                                    <li><a href="#" class="in"> </a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="ch-grid-item">
-                        <div class="ch-item ch-img-3">
-                            <div class="ch-info">
-                                <h3>Designer</h3>
-                                <p>by Fedrick Paul</p>
-                                <ul class="social-icons">
-                                    <li><a href="#"> </a></li>
-                                    <li><a href="#" class="fb"> </a></li>
-                                    <li><a href="#" class="in"> </a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="ch-grid-item">
-                        <div class="ch-item ch-img-4">
-                            <div class="ch-info">
-                                <h3>Designer</h3>
-                                <p>by Stellawil vari</p>
-                                <ul class="social-icons">
-                                    <li><a href="#"> </a></li>
-                                    <li><a href="#" class="fb"> </a></li>
-                                    <li><a href="#" class="in"> </a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-                <div class="clearfix"> </div>
-            </div>
-        </div>
-    </div>
     <!--//team-->
     <!-- footer -->
     <div class="footer">
@@ -679,7 +862,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="codes.html">Short Codes</a></li>
+                    <li><a href="toolemi.html">EMI Tools</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
@@ -687,9 +870,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="col-md-4 footer-grids footer-address">
                     <h3>Contact Us :</h3>
                     <ul>
-                        <li><i class="glyphicon glyphicon-send"></i> 123 San Sebastian <span> New York City USA. </span></li>
-                        <li><i class="glyphicon glyphicon-phone"></i> +11 222 3333 <span> +00 1111 222 </span></li>
-                        <li><i class="glyphicon glyphicon-envelope"></i> <a href="mailto:example@mail.com"> mail@example.com</a></li>
+                        <li> 4TH FLOOR</li>
+                        <li>BIVAB GULMOHAR COMMERCIAL</li>
+                        <li>NAYAPALLI,</li>
+                        <li>BHUBANESWAR-751012,<span>ODISHA.</span></li>
+                        <li><i class="glyphicon glyphicon-phone"></i>  9937184695 / 9337303107.</li>
+                        <li><i class="glyphicon glyphicon-envelope"></i><a href="info@bivabdevelopers.com">info@bivabdevelopers.com</a></li>
+                        <li><i class="glyphicon glyphicon-home"></i><a href="www.bivabdevelopers.com">www.bivabdevelopers.com </a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 footer-grids subscribe">
@@ -713,7 +900,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="clearfix"> </div>
             </div>
             <div class="footer-bottom">
-                
+
             </div>
         </div>
     </div>
@@ -722,13 +909,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <script type="text/javascript">
         $(document).ready(function () {
             /*
-			var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear'
-			};
-			*/
+            var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+            };
+            */
 
             $().UItoTop({ easingType: 'easeOutQuart' });
 
